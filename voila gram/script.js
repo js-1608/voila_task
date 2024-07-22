@@ -20,3 +20,27 @@ $(document).ready(function(){
         }]
     });
 });
+
+document.querySelectorAll('.shareButton').forEach(button => {
+    button.addEventListener('click', function() {
+        shareWebsite();
+    });
+});
+
+function shareWebsite() {
+    const url = 'https://voilastudio.co.in';
+    if (navigator.share) {
+        navigator.share({
+            title: 'Check out Voila Studio!',
+            text: 'Visit Voila Studio for amazing services!',
+            url: url
+        }).then(() => {
+            console.log('Thanks for sharing!');
+        }).catch((error) => {
+            console.error('Error sharing:', error);
+        });
+    } else {
+     
+        prompt('Copy this link to share:', url);
+    }
+}
