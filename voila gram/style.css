@@ -23,11 +23,10 @@ body {
     font-family: Arial, sans-serif;
     background-color: #fafafa;
     margin: 0;
-    padding: 0;
-    
-    
+    padding: 0; 
+     
 }
-
+a{text-decoration: none !important;  }
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -257,4 +256,11 @@ button{
     width:100%;
     border: none;
     border-radius: 3px;
+}
+/*    --------------------       */
+.hovr_scale{
+    transition: all .2s linear;
+}
+.hovr_scale:hover{
+transform: scale(1.05);
 }

@@ -15,7 +15,6 @@ include('db_config/db_config.php');
     <style>
       .section_faq {
         font-family: Arial, sans-serif;
-
         /* margin: 20%; */
         padding: 0% 10%;
         display: flex;
