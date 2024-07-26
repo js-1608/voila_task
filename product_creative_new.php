@@ -308,7 +308,7 @@ add_chatinline(); </script>
 
 
 
-	<!-- //Web-Fonts -->
+
 
 
 
@@ -316,7 +316,7 @@ add_chatinline(); </script>
 
 	
 
-	<!-- Facebook Pixel Code -->
+	 Facebook Pixel Code -->
 
 
 
@@ -1473,9 +1473,28 @@ button.right,button.left {
 
 
 
+<!-- banner  css -->
 
+<style>
+	.desktop_img{
+         display:block;
+	}
 
+	.mobile_img{
+		display:none;
 
+	}
+	@media (max-width:768px) {
+		
+		.mobile_img{
+		display:block;
+
+	}
+	.desktop_img{
+         display:none;
+	}
+	}
+ </style>
 
 
 	
@@ -1616,7 +1635,11 @@ button.right,button.left {
      <!-- MAIN (Center website) -->
 
 
-
+<!-- banner -->
+<div>
+	<img class="desktop_img"  src="./old_website_assets/banner/new_banners/creative_shoot_banner.webp" alt="desktopimg">
+	<img class=" mobile_img"  src="./old_website_assets/banner/mobile_banners/mobile_banner_creative_shoot.webp" alt="mobileimg ">
+</div>
 
 
 <div class="main">
