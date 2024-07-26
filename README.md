@@ -1,6 +1,5 @@
 # voila_task
 desktop image
-./assets/img/become_partner_img/Look BOOK Desktop.jpg
-
+./old_website_assets/banner/new_banners/creative_shoot_banner.webp
 mobile banner image
-https://sub.voilastudio.co.in/assets/img/become_partner_img/LOOKBOOK SHOOT.jpg
+./old_website_assets/banner/mobile_banners/mobile_banner_creative_shoot.webp
