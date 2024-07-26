@@ -15,12 +15,33 @@ include('db_config/db_config.php');
 	<!-- Lightbox -->
 	<link rel="stylesheet" href="./old_website_assets/css/style.css" type="text/css" media="all" />
     <link rel="stylesheet" href="./old_website_assets/css/bootstrap.css">
+ <style>
+	.desktop_img{
+         display:block;
+	}
 
+	.mobile_img{
+		display:none;
+
+	}
+	@media (max-width:768px) {
+		
+		.mobile_img{
+		display:block;
+
+	}
+	.desktop_img{
+         display:none;
+	}
+	}
+ </style>
       
 </head>
 <body>
-
-
+<div>
+	<img class="desktop_img"  src="./assets/img/become_partner_img/Look BOOK Desktop.jpg" alt="desktopimg">
+	<img class=" mobile_img"  src="https://sub.voilastudio.co.in/assets/img/become_partner_img/LOOKBOOK SHOOT.jpg" alt="mobileimg ">
+</div>
 
 	<!-- gallery -->
 	<div class="gallery-agile py-5">
