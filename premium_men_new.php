@@ -652,7 +652,8 @@ border-radius: 5px;
               <img id="showRow3"  src="./premium/premium (1).png">
               <img id="showRow4" src="./premium/premium (1).png"> -->
               <!-- </span> -->
-              <p id="lookshot_p_extra_wisdom">Creative</p>
+              <p id="lookshot_p_extra_wisdom">Color Back
+              Drop</p>
               <!-- <div class="priceandtoggle">
                   <p class="pricingovertoggle">&#8377; <span class="pricingforextraangles">100</span></p>
                   <label class="switch ">
@@ -667,7 +668,7 @@ border-radius: 5px;
             <!-- <span class="imagesetheight"> -->
             <img src="assets/premium_images_folder/MALE CREATIVE/1.JPG" >
             <!-- </span> -->
-            <p id="lookshot_p_extra_wisdom">LookBook</p>
+            <p id="lookshot_p_extra_wisdom">Creative</p>
                 <!-- <div class="priceandtoggle">
                     <p class="pricingovertoggle">&#8377; <span class="pricingforextraangles">100</span></p>
                     <label class="switch ">
@@ -682,7 +683,7 @@ border-radius: 5px;
             <!-- <span class="imagesetheight"> -->
             <img src="/assets/premium_images_folder/MALE%20CUSTOM/1.jpg" >
             <!-- </span> -->
-            <p id="lookshot_p_extra_wisdom">Creative</p>
+            <p id="lookshot_p_extra_wisdom">Custom Shoot</p>
                 <!-- <div class="priceandtoggle">
                     <p class="pricingovertoggle">&#8377; <span class="pricingforextraangles">100</span></p>
                     <label class="switch ">
