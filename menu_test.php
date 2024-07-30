@@ -178,7 +178,7 @@ a {
     50% { color: blue; }
     100% { color: red; }
 } */
-
+/* 
 .tool{
 	width:10px  !important;
 }
@@ -200,7 +200,7 @@ a {
   color: #f8efef;
   font-size: 16px;
   font-weight: 600;
-}
+} */
 /* }
 .announcement_gredient{
 	animation: shake .8s infinite ;
@@ -226,7 +226,7 @@ a {
   transform: translateX(0) !important;
 }
 } */
-
+/* 
 .shake {
     animation: shake 0.5s !important;
     animation-iteration-count: infinite !;
@@ -234,9 +234,7 @@ a {
 
 @keyframes shake {
     0% { transform: translateX(0);
-		color: #f7d360 !important;
-
-	 }
+		color: #f7d360 !important;}
     25% { transform: translateX(-5px);
 		color: #f7d360 !important ;}
     50% { transform: translateX(5px); }
@@ -244,19 +242,65 @@ a {
     100% { transform: translateX(0); }
 	
 }
-
+ */
 
 </style>
+<style>
+.announcement_bar4{
+ background: #fff;
+box-shadow: -4px 9px 5px -9px rgba(0,0,0,0.75);
+ text-align: center;
+ padding: 2px 0px;}
 
+.announcement_text4{
+    font-size: 13px !important;
+    letter-spacing: 1px;
+}
+
+.shake{
+  animation-name: qw ;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+}
+@keyframes qw   {
+    0%{
+  transform: translateX(0);
+ 
+}
+25%{
+  transform: translateX(-5px);
+  
+}
+50%{
+  transform: translateX(5px);
+}
+75%{
+  transform: translateX(-5px);
+}
+100%{
+  transform: translateX(0);
+}
+}
+
+@media (max-width:768px) {
+    .announcementbar_mobile_none{
+        display: none;
+    }
+}
+    </style>
 
 
 <!-- partial:index.partial.html -->
-<div class="mobile_hide announcement_bar" style=" height:20px; ">
-            <p class="announcement_text" style="color:white !important; font-size:14px ;margin:0px !important">Discover Our Services! Call To Book Shoots - 
-            <p class="announcement_gredient" style="color:white !important; font-size:14px ;margin:0px !important">Online Booking Launching Soon!</p></p>
+<!-- <div class="mobile_hide announcement_bar" style=" height:20px; ">
+     <p class="announcement_text" style="color:white !important; font-size:14px ;margin:0px !important">Discover Our Services! Call To Book Shoots - 
+     <p class="announcement_gredient" style="color:white !important; font-size:14px ;margin:0px !important">Online Booking Launching Soon!</p></p>
+ </div> -->
+ <div class="announcement_bar4 announcementbar_mobile_none">
+            <p class="announcement_text4"> E-Commerce Photoshoot Services! Call To Book Shoots - 
+            <span class="announcement_gredient4">Online Booking Launching Soon!</span></p>
         </div>
 	
-		<script>
+		<!-- <script>
         document.addEventListener('DOMContentLoaded', () => {
     const contactUsElement = document.querySelector('.announcement_gredient');
     setInterval(() => {
@@ -265,8 +309,18 @@ a {
            contactUsElement.classList.remove('shake');
         }, 500); 
     }, 2000); 
-    });
+    }); 
     
+    </script>-->
+	<script>
+            const contactUsElement2 = document.querySelector('.announcement_gredient4');
+            setInterval(() => {
+                contactUsElement2.classList.add('shake');
+                setTimeout(() => {
+                    contactUsElement2.classList.remove('shake');
+                }, 500);
+            }, 2000); 
+      
     </script>
 <nav role="navigation" class="main-nav-wrap">
 	<div class="mobilemenucompanylogo">
