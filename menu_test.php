@@ -296,7 +296,7 @@ box-shadow: -4px 9px 5px -9px rgba(0,0,0,0.75);
      <p class="announcement_gredient" style="color:white !important; font-size:14px ;margin:0px !important">Online Booking Launching Soon!</p></p>
  </div> -->
  <div class="announcement_bar4 announcementbar_mobile_none">
-            <p class="announcement_text4"> E-Commerce Photoshoot Services! Call To Book Shoots - 
+            <p class="announcement_text4">Explore Our E-Commerce Photoshoot Services! Call To Book Shoots - 
             <span class="announcement_gredient4">Online Booking Launching Soon!</span></p>
         </div>
 	

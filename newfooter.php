@@ -58,7 +58,7 @@ include('db_config/base_url.php');
                 <li class="linklitagfooter"><a class="linkdivi" href="#"><img class="imgofvoila" src="<?php echo BASE_URL; ?>/mega_menu/img/voila_studio_logo.svg" alt=""></a></li>
                 <!-- <li class="linklitagfooter"><a class="linkdivi" href="#"> &#169; 2017-<?php echo date("Y"); ?> All Rights Reserved Made & Designed By</a></li>
                 <li class="linklitagfooter"><a class="linkdivi highlight" href="#">Intenim Technologies Pvt Ltd</a></li> -->
-                <li class="linklitagfooter"><a class="linkdivi highlight" href="#">Think Ecommerce Think VOILA</a></li>
+                <li class="linklitagfooter"><a class="linkdivi highlight" style=" color:black !important; " href="#">Think Ecommerce Think VOILA</a></li>
                 <span class="socialiconsfootervoila">
                     <a id="icons_social" href="https://www.facebook.com/VoilaStudio.in/"><img class="socialiconsvoila" src="<?php echo BASE_URL; ?>/mega_menu/img/footer/facebook.webp" alt=""></a>
 
@@ -226,10 +226,14 @@ include('db_config/base_url.php');
             <a class="paraheadings blackm" href="mailto:info@intenim.com">info@intenim.com</a>
                 </div>
 </section>
-<hr style="width:100%; text-align:center">
-<div style="width:100%; align-item:center ;padding:2%; text-align:center">
+<!-- <hr style="width:100%; text-align:center"> -->
+<div style="width:100%; align-item:center ;padding:1%; display:flex; justify-content:space-between;  ">
    <p class="linklitagfooter"><a class="linkdivi" href="#"> &#169; 2017-<?php echo date("Y"); ?> All Rights Reserved</a></p>
-                <p class="linklitagfooter"> Made & Designed By<br><a class="linkdivi highlight" href="#" style="font-size:12px"> Intenim Technologies Pvt Ltd.</a></p>
+               
+   
+   <p class="linklitagfooter"> Made & Designed By
+</p>
+<p><a class="linkdivi highlight" href="#" style="font-size:12px"> Intenim Technologies Pvt Ltd.</a></p>
 </div>
 
 <script>
