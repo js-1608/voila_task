@@ -283,7 +283,15 @@ border-radius: 5px;
     }
 </style>
 
-
+<style>
+    .frame{
+        transition: all .3s linear;
+    }
+    .frame:hover{
+        -webkit-text-stroke-width: .5px;
+        box-shadow: -1.35px 1px 5.6px 2px #00000073;
+    }
+</style>
     </head>
     <?php include("menu_test.php"); ?>
 <body>
@@ -645,7 +653,7 @@ border-radius: 5px;
         <p id="shootfor" class="shootsfor">Shoot for</p>
         <div class="detailed_more_angle" style="display:flex ;flex-wrap:nowrap ;overflow:scroll-x ">
 
-          <div class="model_detailed_division_extra" style="height:auto ;width:auto" id="showRow1">
+          <div class="model_detailed_division_extra frame" style="height:auto ;width:auto" id="showRow1">
               <!-- <span class="imagesetheight"> -->
               <img  src="./assets/premium_images_folder/MALE COLOR/VOIL6814.jpg">
               <!-- <img id="showRow2" src="./premium/premium (1).png">
@@ -664,7 +672,7 @@ border-radius: 5px;
               </div> -->
           </div>
 
-        <div class="model_detailed_division_extra" style="height:auto ;width:auto" id="showRow2">
+        <div class="model_detailed_division_extra frame" style="height:auto ;width:auto" id="showRow2">
             <!-- <span class="imagesetheight"> -->
             <img src="assets/premium_images_folder/MALE CREATIVE/1.JPG" >
             <!-- </span> -->
@@ -679,7 +687,7 @@ border-radius: 5px;
                 </div> -->
         </div>
 
-        <div class="model_detailed_division_extra" style="height:auto ;width:auto" id="showRow3">
+        <div class="model_detailed_division_extra frame" style="height:auto ;width:auto" id="showRow3">
             <!-- <span class="imagesetheight"> -->
             <img src="/assets/premium_images_folder/MALE%20CUSTOM/1.jpg" >
             <!-- </span> -->
@@ -693,7 +701,7 @@ border-radius: 5px;
                     </label>
                 </div> -->
         </div>
-        <div class="model_detailed_division_extra" style="height:auto ;width:auto">
+        <div class="model_detailed_division_extra frame" style="height:auto ;width:auto">
             <!-- <span class="imagesetheight"> -->
             <div>
                 <img src="./premium/premium (2).png" id="showRow4">
@@ -770,12 +778,7 @@ border-radius: 5px;
 
         <div class="">
             <p class="detailed_model_heading_more"> Description: </p>
-            <p class="detailed_model_heading"> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-                Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of
-                type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap
-                into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release
-                of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like
-                Aldus PageMaker including versions of Lorem Ipsum. </p>
+            <p class="detailed_model_heading" id="descriptionText"></p>
         </div>
 
 
@@ -1512,19 +1515,33 @@ function closeBothSignin() {
 
 
 
-
-
 <script>
         const rows = ['row1', 'row2', 'row3', 'row4'];
         const imgs = ['showRow1', 'showRow2', 'showRow3', 'showRow4'];
+        const descriptions = [
+            "This is the description for Color Back Drop.",
+            "This is the description for Creative.",
+            "This is the description for Outdoor.",
+            "This is the description for Custom Shoot."
+        ];
+
+        function showRow(index) {
+            rows.forEach(row => {
+                document.getElementById(row).style.display = 'none';
+            });
+            document.getElementById(rows[index]).style.display = 'flex';
+            document.getElementById('descriptionText').textContent = descriptions[index];
+        }
 
         imgs.forEach((img, index) => {
-            document.getElementById(img).addEventListener('click', function() {
-                rows.forEach(row => {
-                    document.getElementById(row).style.display = 'none';
-                });
-                document.getElementById(rows[index]).style.display = 'flex';
+            document.getElementById(img).addEventListener('click', () => {
+                showRow(index);
             });
+        });
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // Set default state
+            showRow(0);
         });
     </script>
 
