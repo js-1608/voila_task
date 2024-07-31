@@ -228,12 +228,14 @@ include('db_config/base_url.php');
 </section>
 <!-- <hr style="width:100%; text-align:center"> -->
 <div style="width:100%; align-item:center ;padding:1%; display:flex; justify-content:space-between;  ">
-   <p class="linklitagfooter"><a class="linkdivi" href="#"> &#169; 2017-<?php echo date("Y"); ?> All Rights Reserved</a></p>
+   <p class="linklitagfooter"><a style="font-size:10px !important" class="linkdivi" href="#"> &#169; 2017-<?php echo date("Y"); ?> All Rights Reserved</a></p>
                
    
-   <p class="linklitagfooter d_md_none"> Made & Designed By
+  <div>
+  <p class="linklitagfooter d_md_none" style="font-size:10px !important"> Made & Designed By
 </p>
-<p><a class="linkdivi highlight d_md_none" href="#" style="font-size:12px"> Intenim Technologies Pvt Ltd.</a></p>
+<a class="linkdivi highlight d_md_none" href="#" style="font-size:10px !important"> Intenim Technologies Pvt Ltd.</a>
+  </div>
 </div>
 
 <script>
