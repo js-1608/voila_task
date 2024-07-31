@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>forgot</title>
+    <style>
+        .body{
+            margin: 0;
+            padding: 0;
+            text-decoration: none;
+            list-style: none;
+        }
+        .forgot_box{
+            background-color: white;
+            border-radius: 10px;
+            width: 400px;
+            padding: 30px 20px 40px;
+            margin: 2px 12px;
+        }
+        .forgot_form{
+            padding: 2px 30px;
+        }
+        .forgot_text{
+            font-size: 30px;
+         /* text-transform: capitalize; */
+         font-weight: 600;
+          padding: 15px 30px 7px;
+          margin: 0;
+        }
+        .forgot_input{      
+            height: 36px;
+            border: double 2px transparent !important;
+            border-radius: 5px !important;
+            background-image: linear-gradient(white, white), linear-gradient(to right, #8A51B5, #FF4048) !important;
+            background-origin: border-box;
+            background-clip: content-box, border-box;
+            margin: 2px auto -12px;
+            width: 100%; 
+            display: flex;
+             align-items: center;
+        }
+        .Mobile_text{
+            margin-bottom: 0;
+            padding-bottom: 3px;
+            font-size: 20px;
+            color: grey;
+        }
+
+       .forgot_button{
+         width: 100%;
+    padding: 10px 20px;
+    border: 0;
+    border-radius: 5px;
+    font-size: 18px;
+    background-image: linear-gradient(to right, #8A51B5, #FF4048);
+    color: white;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    margin-top: 30px;
+       }
+       input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.pass_text{
+    color: rgb(161, 159, 159);
+    font-size: 15px;
+    /* text-transform: capitalize; */
+    padding: 0px 30px 0px;
+    margin: 0;
+}
+@media (max-width:768px) {
+    .forgot_box{
+        
+            padding: 30px 12px 40px;
+        }
+        .forgot_form{
+            padding: 2px 16px;
+        }
+    
+}
+    </style>
+</head>
+<body>
+    <div style="height:100vh; display: flex; align-items: center;
+     background-color: rgba(0, 0, 0, 0.196);
+    justify-content: center;" >
+    <div class="forgot_box">
+        <div>
+
+            <div style="text-align: end; padding-right: 10px;">
+                <a href="">
+                    <img width="17px" height="17px" src="./voila gram/voila gram/image/cross-7086307_640.png" alt="cross">
+                </a>
+            </div>
+
+    <h2 class="forgot_text">Reset Password</h2>
+
+<p class=" pass_text">Enter your Mobile Number and We'll send a link to reset your password.</p>
+
+<form class="forgot_form" action="">
+    <p class="Mobile_text"> Mobile Number *</p>
+    <div class="forgot_input">
+        <input style="border: none; outline: none; padding-left: 10px; width: 94%;" required type="number">
+    </div>
+    <center>
+        <button class="forgot_button">
+            send link
+         </button>  
+    </center>
+</form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
