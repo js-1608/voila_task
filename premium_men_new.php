@@ -701,10 +701,10 @@ border-radius: 5px;
                     </label>
                 </div> -->
         </div>
-        <div class="model_detailed_division_extra frame" style="height:auto ;width:auto">
+        <div class="model_detailed_division_extra frame" style="height:auto ;width:auto" id="showRow4">
             <!-- <span class="imagesetheight"> -->
             <div>
-                <img src="./premium/premium (2).png" id="showRow4">
+                <img src="./premium/premium (2).png" >
                 <!-- </span> -->
                 <p id="lookshot_p_extra_wisdom">Outdoor</p>
                 <!-- <div class="priceandtoggle">
@@ -771,10 +771,7 @@ border-radius: 5px;
           </div>
         </div> -->
 
-        <div style="width:100% ;display:flex ;justify-content:space-around">
-          <button style="width:40% ;background-color:#B08ADF; color:white ;padding:2% ;border:none ; border-radius:12px ;font-size:12px">CALL US NOW</button>
-          <button style="width:40% ;background-color:#B08ADF; color:white ;padding:2% ;border:none; border-radius:12px ;font-size:12px">Enquire Now</button>
-         </div>
+        
 
         <div class="">
             <p class="detailed_model_heading_more"> Description: </p>
@@ -783,6 +780,10 @@ border-radius: 5px;
 
 
     </b>
+    <div style="width:100% ;display:flex; flex:wrap; justify-content:space-around">
+          <button style="width:40% ;background-color:#B08ADF; color:white ;padding:2% ;border:none ; border-radius:12px ;font-size:12px">CALL US NOW</button>
+          <button style="width:40% ;background-color:#B08ADF; color:white ;padding:2% ;border:none; border-radius:12px ;font-size:12px">Enquire Now</button>
+         </div>
 </div>
 
     <!-- <script>
