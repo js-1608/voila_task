@@ -433,54 +433,54 @@ border-radius: 5px;
             <div class="col_8 col_lg_12 premium_img_height">
                 <div class="row" id="row1">
                     <div class="col_6"><div class="px_12">
-                    <img src="./assets/premium_images_folder/MALE COLOR/VOIL6814.jpg" class="premium_img" loading="lazy" alt="premiumimg"></div>
+                    <img src="./assets/premium_images_folder/FEMALE COLR/1.jpg" class="premium_img" loading="lazy" alt="premiumimg"></div>
 
                     </div>
                     <div class="col_6"><div class="px_12">
-                        <img src="./assets/premium_images_folder/MALE COLOR/VOIL6784.jpg" class="premium_img" loading="lazy" alt="premiumimg"></div>
+                        <img src="./assets/premium_images_folder/FEMALE COLR/2.jpg" class="premium_img" loading="lazy" alt="premiumimg"></div>
                     </div>
                     <div class="col_6"><div class="px_12">
-                        <img src="./assets/premium_images_folder/MALE COLOR/VOIL6794.jpg" class="premium_img" loading="lazy" alt="premiumimg"></div>
+                        <img src="./assets/premium_images_folder/FEMALE COLR/3.jpg" class="premium_img" loading="lazy" alt="premiumimg"></div>
                     </div>
                     <div class="col_6"><div class="px_12">
-                        <img src="./assets/premium_images_folder/MALE COLOR/VOIL6796.jpg" class="premium_img" loading="lazy" alt="premiumimg"></div>
+                        <img src="./assets/premium_images_folder/FEMALE COLR/4.jpg" class="premium_img" loading="lazy" alt="premiumimg"></div>
                     </div>
                     <div class="col_6"><div class="px_12">
-                        <img src="./assets/premium_images_folder/MALE COLOR/VOIL6813.jpg" class="premium_img" loading="lazy" alt="premiumimg"></div>
+                        <img src="./assets/premium_images_folder/FEMALE COLR/5.jpg" class="premium_img" loading="lazy" alt="premiumimg"></div>
                     </div>
                 </div>
                 <div class="row" id="row2">
                     <div class="col_6"><div class="px_12">
-                        <img src="assets/premium_images_folder/MALE CREATIVE/1.JPG" class="premium_img" loading="lazy" alt="premiumimg"></div>
+                        <img src="assets/premium_images_folder/FEMALE CREATIVE/1.JPG" class="premium_img" loading="lazy" alt="premiumimg"></div>
                     </div>
                     <div class="col_6"><div class="px_12">
-                        <img src="assets/premium_images_folder/MALE%20CREATIVE/2.JPG" class="premium_img" loading="lazy" alt="premiumimg"></div>
+                        <img src="assets/premium_images_folder/FEMALE%20CREATIVE/2.JPG" class="premium_img" loading="lazy" alt="premiumimg"></div>
                     </div>
                     <div class="col_6"><div class="px_12">
-                        <img src="assets/premium_images_folder/MALE%20CREATIVE/3.JPG" class="premium_img" loading="lazy" alt="premiumimg"></div>
+                        <img src="assets/premium_images_folder/FEMALE%20CREATIVE/3.JPG" class="premium_img" loading="lazy" alt="premiumimg"></div>
                     </div>
                     <div class="col_6"><div class="px_12">
-                        <img src="assets/premium_images_folder/MALE%20CREATIVE/4.JPG" class="premium_img" loading="lazy" alt="premiumimg"></div>
+                        <img src="assets/premium_images_folder/FEMALE%20CREATIVE/4.JPG" class="premium_img" loading="lazy" alt="premiumimg"></div>
                     </div>
                     <div class="col_6"><div class="px_12">
-                        <img src="assets/premium_images_folder/MALE%20CREATIVE/5.JPG" class="premium_img" loading="lazy" alt="premiumimg"></div>
+                        <img src="assets/premium_images_folder/FEMALE%20CREATIVE/5.JPG" class="premium_img" loading="lazy" alt="premiumimg"></div>
                     </div>
                 </div>
                 <div class="row" id="row3">
                     <div class="col_6"><div class="px_12">
-                        <img src="/assets/premium_images_folder/MALE%20CUSTOM/1.jpg" class="premium_img" loading="lazy" alt="premiumimg"></div>
+                        <img src="/assets/premium_images_folder/FEMALE%20CUSTOM/1.JPG" class="premium_img" loading="lazy" alt="premiumimg"></div>
                     </div>
                     <div class="col_6"><div class="px_12">
-                        <img src="/assets/premium_images_folder/MALE%20CUSTOM/2.jpg" class="premium_img" loading="lazy" alt="premiumimg"></div>
+                        <img src="/assets/premium_images_folder/FEMALE%20CUSTOM/2.JPG" class="premium_img" loading="lazy" alt="premiumimg"></div>
                     </div>
                     <div class="col_6"><div class="px_12">
-                        <img src="/assets/premium_images_folder/MALE%20CUSTOM/3.jpg" class="premium_img" loading="lazy" alt="premiumimg"></div>
+                        <img src="/assets/premium_images_folder/FEMALE%20CUSTOM/4.JPG" class="premium_img" loading="lazy" alt="premiumimg"></div>
                     </div>
                     <div class="col_6"><div class="px_12">
-                        <img src="/assets/premium_images_folder/MALE%20CUSTOM/4.jpg" class="premium_img" loading="lazy" alt="premiumimg"></div>
+                        <img src="/assets/premium_images_folder/FEMALE%20CUSTOM/6.JPG" class="premium_img" loading="lazy" alt="premiumimg"></div>
                     </div>
                     <div class="col_6"><div class="px_12">
-                        <img src="/assets/premium_images_folder/MALE%20CUSTOM/5.jpg" class="premium_img" loading="lazy" alt="premiumimg"></div>
+                        <img src="/assets/premium_images_folder/FEMALE CUSTOM/7.JPG" class="premium_img" loading="lazy" alt="premiumimg"></div>
                     </div>
                 </div>
                 <!-- <div class="row" id="row4">
@@ -508,14 +508,14 @@ border-radius: 5px;
                     <div style="height: 1px; background-color: #CCC4C4; max-width: 600px; margin-top: 20px;"></div>
                     <div class="">
                         <div class="d-flex px_12 gap_12 pt_30 overflow_scroll">
-                            <div class="text_center frame">
-                                <img class="click_img" src="./assets/premium_images_folder/MALE COLOR/VOIL6814.jpg" class="detailed_model_detailedshot_extra" loading="lazy" alt="" id="showRow1">Color Back Drop
+                            <div class="text_center frame" id="showRow1">
+                                <img class="click_img" src="https://sub.voilastudio.co.in/voila_assets/icon/1.jpg" class="detailed_model_detailedshot_extra" loading="lazy" alt="" >Color Back Drop
                             </div>
-                            <div class="text_center frame">
-                                <img class="click_img" src="assets/premium_images_folder/MALE CREATIVE/1.JPG" class="detailed_model_detailedshot_extra" loading="lazy" alt="" id="showRow2"> Creative / Custom
+                            <div class="text_center frame" id="showRow2">
+                                <img class="click_img" src="https://sub.voilastudio.co.in/voila_assets/icon/2.jpg" class="detailed_model_detailedshot_extra" loading="lazy" alt="" > Creative / Custom
                             </div>
-                            <div class="text_center frame">
-                                <img class="click_img" src="/assets/premium_images_folder/MALE%20CUSTOM/1.jpg" loading="lazy" alt="" id="showRow3">Outdoor
+                            <div class="text_center frame" id="showRow3">
+                                <img class="click_img" src="https://sub.voilastudio.co.in/voila_assets/icon/4.jpg" loading="lazy" alt="" >Outdoor
                             </div>
                             <!-- <div class="text_center frame">
                                 <img class="click_img" src="./premium/premium (2).png" loading="lazy" alt="" id="showRow4">Custom Shoot
