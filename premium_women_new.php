@@ -15,6 +15,45 @@ require_once("analytics.php");
 include('db_config/base_url.php');
 include('db_config/db_config.php');
 
+if(isset($_REQUEST['form_name'])){
+	
+	$name = $_REQUEST['form_name'];
+	$mobile = $_REQUEST['form_mobile'];
+	$email = $_REQUEST['form_email'];
+	$message = $_REQUEST['form_message'];
+
+
+    
+		
+  	$main_category_query = "insert into booking_query (name,mobile,email,message,created_on)
+                                values ('$name','$mobile','$email','$message',now())";
+  
+
+	$main_category_query_run = $conn->prepare($main_category_query);
+    
+	if($main_category_query_run->execute()){
+			
+        $location = "thankyou.php";
+		
+        echo " <script> 
+
+                window.location.href = '$location';
+    
+                </script>
+        ";
+
+
+
+	}   
+	
+	
+	
+	
+	
+	
+}
+
+
 ?>
 
 <!-- <img class="stage" src="assets/img/indexpagebanner/detail_stage_3.webp" alt="">
@@ -269,6 +308,7 @@ border-radius: 5px;
         }
         .premium_img {
             width: 100%;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
         }
         .d-flex {
             display: flex;
@@ -311,17 +351,18 @@ border-radius: 5px;
             display: none;
         }
         .discription {
-            max-width: 543px;
-            margin-top: 40px;
+            /* max-width: 543px; */
+            /* margin-top: 40px; */
         }
         .discription_text {
-            font-weight: 700;
-            font-size: 35px;
+            font-weight: 300;
+            font-size: 20px;
         }
         .discription_text2 {
-            font-weight: 400;
-            font-size: 20px;
-            line-height: 30px;
+            font-weight: 100;
+            font-size: 14px;
+            /* line-height: 30px; */
+            text-align:justify;
         }
         .modal_text {
             font-size: 29px;
@@ -352,7 +393,8 @@ border-radius: 5px;
                 -ms-overflow-style: none;  /* IE and Edge */
                 scrollbar-width: none;  /* Firefox */
             }
-            #row1, #row2, #row3, #row4 {
+            #row1, #row2, #row3, #row4 ,  #color1 ,#color2 ,#color3, #color5 ,#color4
+            {
                 flex-wrap: nowrap;
                 width: 1500px;
                 flex-direction: row !important;
@@ -392,8 +434,190 @@ border-radius: 5px;
 .fancybox-container * {
     color: white !important;
 }
+     /* Button Styles */
+     .button_book_now_2 {
+            width: 210px;
+    background-color: rgb(60, 124, 249);
+    color: white !important;
+    box-shadow: 1px 4px 5px 0px rgb(60 124 249 / 23%);
+    font-size: 18px;
+    text-align: center;
+    cursor: pointer;
+    padding: 7px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    height: 43px;
+    font-weight: 600;
+    margin-top:1%
+        }
 
+        .button_book_now_2:hover {
+            background-color: #45a049;
+        }
 
+        .booknowtag_2 {
+            text-decoration: none;
+            color: white !important;
+        }
+
+        /* Popup Form Styles */
+        .popup-form_2 {
+            display: none;
+            position: fixed;
+            z-index: 100;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        .form-content_2 {
+            background-color: #fff;
+            margin: 10% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 500px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            animation: slide-down 0.4s ease-out;
+        }
+
+        @keyframes slide-down {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .clode_2 {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .clode_2:hover,
+        .clode_2:focus {
+            color: #000;
+        }
+
+ /* Popup Form Styles */
+ .popup-form_2 {
+            display: none;
+            position: fixed;
+            z-index: 100;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        .form-content_2 {
+            background-color: #fff;
+            margin: 10% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 500px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            animation: slide-down 0.4s ease-out;
+        }
+
+        @keyframes slide-down {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .clode_2 {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .clode_2:hover,
+        .clode_2:focus {
+            color: #000;
+        }
+
+        /* h2 {
+    font-family: 'Arial', sans-serif;
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+    text-align: center;
+} */
+
+        .form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .label {
+            font-size: 16px;
+            /* margin-bottom: 5px; */
+            color: #555;
+            text-align:left;
+        }
+
+        .input[type="text"],
+        .input[type="email"],
+        .textarea2 {
+            width: 100% !important;
+            padding: 10px !important;
+            border: 1px solid #ccc !important;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .input[type="text"]:focus,
+        .input2[type="email"]:focus,
+        .textarea2:focus {
+            border-color: #4CAF50;
+            outline: none;
+            box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+        }
+
+        .textarea2 {
+            resize: vertical;
+            min-height: 100px;
+        }
+
+        .input[type="button"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        .input[type="button"]:hover {
+            background-color: #45a049;
+        }
 </style>
 
 <style>
@@ -429,107 +653,321 @@ border-radius: 5px;
     <a style=" text-transform: lowercase;" class='breadcrum_links' href="">Premium Shoot</a>
 </div>
 
-<div class="row" style="padding: 0px 4%;">
-            <div class="col_8 col_lg_12 premium_img_height">
-                <div class="row" id="row1">
-                    <div class="col_6"><div class="px_12">
-                    <img src="./assets/premium_images_folder/FEMALE COLR/1.jpg" class="premium_img" loading="lazy" alt="premiumimg"></div>
+            <div class="row" style="padding: 0px 4%;">
+                        <div class="col_8 col_lg_12 premium_img_height">
 
+                    <div id="row1">
+                        <div class="row" id="color1">
+                            <div class="col_6">
+                                <div class="px_12" style="position:relative;" style=" position:relative;">
+                                    <img src="./assets/premium_images_folder/Color%20Back%20Drop/New%20folder/1.webp"
+                                        class="premium_img" loading="lazy" alt="premiumimg">
+                                    <p class="referenceImg_tag" style=" width:50%;  bottom:12px;">Reference .Img</p>
+                                </div>
+                            </div>
+                            <div class="col_6">
+                                <div class="px_12" style="position:relative;">
+                                    <img src="./assets/premium_images_folder/Color%20Back%20Drop/New%20folder/2.webp"
+                                        class="premium_img" loading="lazy" alt="premiumimg">
+                                    <p class="referenceImg_tag" style=" width:50%;  bottom:12px;">Reference .Img</p>
+                                </div>
+                            </div>
+                            <div class="col_6">
+                                <div class="px_12" style="position:relative;">
+                                    <img src="./assets/premium_images_folder/Color%20Back%20Drop/New%20folder/3.webp"
+                                        class="premium_img" loading="lazy" alt="premiumimg">
+                                    <p class="referenceImg_tag" style=" width:50%;  bottom:12px;">Reference .Img</p>
+                                </div>
+                            </div>
+                            <div class="col_6">
+                                <div class="px_12" style="position:relative;">
+                                    <img src="./assets/premium_images_folder/Color%20Back%20Drop/New%20folder/4.webp"
+                                        class="premium_img" loading="lazy" alt="premiumimg">
+                                    <p class="referenceImg_tag" style=" width:50%;  bottom:12px;">Reference .Img</p>
+                                </div>
+                            </div>
+                            <div class="col_6">
+                                <div class="px_12" style="position:relative;">
+                                    <img src="./assets/premium_images_folder/Color%20Back%20Drop/New%20folder/5.webp"
+                                        class="premium_img" loading="lazy" alt="premiumimg">
+                                    <p class="referenceImg_tag" style=" width:50%;  bottom:12px;">Reference .Img</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row" id="color2">
+                            <div class="col_6">
+                                <div class="px_12" style="position:relative;" style=" position:relative;">
+                                    <img src="./assets/premium_images_folder/Color%20Back%20Drop/New%20folder (2)/1.webp"
+                                        class="premium_img" loading="lazy" alt="premiumimg">
+                                    <p class="referenceImg_tag" style=" width:50%;  bottom:12px;">Reference .Img</p>
+                                </div>
+                            </div>
+                            <div class="col_6">
+                                <div class="px_12" style="position:relative;">
+                                    <img src="./assets/premium_images_folder/Color%20Back%20Drop/New%20folder (2)/2.webp"
+                                        class="premium_img" loading="lazy" alt="premiumimg">
+                                    <p class="referenceImg_tag" style=" width:50%;  bottom:12px;">Reference .Img</p>
+                                </div>
+                            </div>
+                            <div class="col_6">
+                                <div class="px_12" style="position:relative;">
+                                    <img src="./assets/premium_images_folder/Color%20Back%20Drop/New%20folder (2)/3.webp"
+                                        class="premium_img" loading="lazy" alt="premiumimg">
+                                    <p class="referenceImg_tag" style=" width:50%;  bottom:12px;">Reference .Img</p>
+                                </div>
+                            </div>
+                            <div class="col_6">
+                                <div class="px_12" style="position:relative;">
+                                    <img src="./assets/premium_images_folder/Color%20Back%20Drop/New%20folder (2)/4.webp"
+                                        class="premium_img" loading="lazy" alt="premiumimg">
+                                    <p class="referenceImg_tag" style=" width:50%;  bottom:12px;">Reference .Img</p>
+                                </div>
+                            </div>
+                            <div class="col_6">
+                                <div class="px_12" style="position:relative;">
+                                    <img src="./assets/premium_images_folder/Color%20Back%20Drop/New%20folder (2)/5.webp"
+                                        class="premium_img" loading="lazy" alt="premiumimg">
+                                    <p class="referenceImg_tag" style=" width:50%;  bottom:12px;">Reference .Img</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row" id="color3">
+                            <div class="col_6">
+                                <div class="px_12" style="position:relative;" style=" position:relative;">
+                                    <img src="./assets/premium_images_folder/Color%20Back%20Drop/New%20folder (3)/1.webp"
+                                        class="premium_img" loading="lazy" alt="premiumimg">
+                                    <p class="referenceImg_tag" style=" width:50%;  bottom:12px;">Reference .Img</p>
+                                </div>
+                            </div>
+                            <div class="col_6">
+                                <div class="px_12" style="position:relative;">
+                                    <img src="./assets/premium_images_folder/Color%20Back%20Drop/New%20folder (3)/2.webp"
+                                        class="premium_img" loading="lazy" alt="premiumimg">
+                                    <p class="referenceImg_tag" style=" width:50%;  bottom:12px;">Reference .Img</p>
+                                </div>
+                            </div>
+                            <div class="col_6">
+                                <div class="px_12" style="position:relative;">
+                                    <img src="./assets/premium_images_folder/Color%20Back%20Drop/New%20folder (3)/3.webp"
+                                        class="premium_img" loading="lazy" alt="premiumimg">
+                                    <p class="referenceImg_tag" style=" width:50%;  bottom:12px;">Reference .Img</p>
+                                </div>
+                            </div>
+                            <div class="col_6">
+                                <div class="px_12" style="position:relative;">
+                                    <img src="./assets/premium_images_folder/Color%20Back%20Drop/New%20folder (3)/4.webp"
+                                        class="premium_img" loading="lazy" alt="premiumimg">
+                                    <p class="referenceImg_tag" style=" width:50%;  bottom:12px;">Reference .Img</p>
+                                </div>
+                            </div>
+                            <div class="col_6">
+                                <div class="px_12" style="position:relative;">
+                                    <img src="./assets/premium_images_folder/Color%20Back%20Drop/New%20folder (3)/5.webp"
+                                        class="premium_img" loading="lazy" alt="premiumimg">
+                                    <p class="referenceImg_tag" style=" width:50%;  bottom:12px;">Reference .Img</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row" id="color4">
+                            <div class="col_6">
+                                <div class="px_12" style="position:relative;" style=" position:relative;">
+                                    <img src="./assets/premium_images_folder/Color%20Back%20Drop/New%20folder (4)/1.webp"
+                                        class="premium_img" loading="lazy" alt="premiumimg">
+                                    <p class="referenceImg_tag" style=" width:50%;  bottom:12px;">Reference .Img</p>
+                                </div>
+                            </div>
+                            <div class="col_6">
+                                <div class="px_12" style="position:relative;">
+                                    <img src="./assets/premium_images_folder/Color%20Back%20Drop/New%20folder (4)/2.webp"
+                                        class="premium_img" loading="lazy" alt="premiumimg">
+                                    <p class="referenceImg_tag" style=" width:50%;  bottom:12px;">Reference .Img</p>
+                                </div>
+                            </div>
+                            <div class="col_6">
+                                <div class="px_12" style="position:relative;">
+                                    <img src="./assets/premium_images_folder/Color%20Back%20Drop/New%20folder (4)/3.webp"
+                                        class="premium_img" loading="lazy" alt="premiumimg">
+                                    <p class="referenceImg_tag" style=" width:50%;  bottom:12px;">Reference .Img</p>
+                                </div>
+                            </div>
+                            <div class="col_6">
+                                <div class="px_12" style="position:relative;">
+                                    <img src="./assets/premium_images_folder/Color%20Back%20Drop/New%20folder (4)/4.webp"
+                                        class="premium_img" loading="lazy" alt="premiumimg">
+                                    <p class="referenceImg_tag" style=" width:50%;  bottom:12px;">Reference .Img</p>
+                                </div>
+                            </div>
+                            <div class="col_6">
+                                <div class="px_12" style="position:relative;">
+                                    <img src="./assets/premium_images_folder/Color%20Back%20Drop/New%20folder (4)/5.webp"
+                                        class="premium_img" loading="lazy" alt="premiumimg">
+                                    <p class="referenceImg_tag" style=" width:50%;  bottom:12px;">Reference .Img</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row" id="color5">
+                            <div class="col_6">
+                                <div class="px_12" style="position:relative;" style=" position:relative;">
+                                    <img src="./assets/premium_images_folder/Color%20Back%20Drop/New%20folder (5)/1.webp"
+                                        class="premium_img" loading="lazy" alt="premiumimg">
+                                    <p class="referenceImg_tag" style=" width:50%;  bottom:12px;">Reference .Img</p>
+                                </div>
+                            </div>
+                            <div class="col_6">
+                                <div class="px_12" style="position:relative;">
+                                    <img src="./assets/premium_images_folder/Color%20Back%20Drop/New%20folder (5)/2.webp"
+                                        class="premium_img" loading="lazy" alt="premiumimg">
+                                    <p class="referenceImg_tag" style=" width:50%;  bottom:12px;">Reference .Img</p>
+                                </div>
+                            </div>
+                            <div class="col_6">
+                                <div class="px_12" style="position:relative;">
+                                    <img src="./assets/premium_images_folder/Color%20Back%20Drop/New%20folder (5)/3.webp"
+                                        class="premium_img" loading="lazy" alt="premiumimg">
+                                    <p class="referenceImg_tag" style=" width:50%;  bottom:12px;">Reference .Img</p>
+                                </div>
+                            </div>
+                            <div class="col_6">
+                                <div class="px_12" style="position:relative;">
+                                    <img src="./assets/premium_images_folder/Color%20Back%20Drop/New%20folder (5)/4.webp"
+                                        class="premium_img" loading="lazy" alt="premiumimg">
+                                    <p class="referenceImg_tag" style=" width:50%;  bottom:12px;">Reference .Img</p>
+                                </div>
+                            </div>
+                            <div class="col_6">
+                                <div class="px_12" style="position:relative;">
+                                    <img src="./assets/premium_images_folder/Color%20Back%20Drop/New%20folder (5)/5.webp"
+                                        class="premium_img" loading="lazy" alt="premiumimg">
+                                    <p class="referenceImg_tag" style=" width:50%;  bottom:12px;">Reference .Img</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col_6"><div class="px_12">
-                        <img src="./assets/premium_images_folder/FEMALE COLR/2.jpg" class="premium_img" loading="lazy" alt="premiumimg"></div>
-                    </div>
-                    <div class="col_6"><div class="px_12">
-                        <img src="./assets/premium_images_folder/FEMALE COLR/3.jpg" class="premium_img" loading="lazy" alt="premiumimg"></div>
-                    </div>
-                    <div class="col_6"><div class="px_12">
-                        <img src="./assets/premium_images_folder/FEMALE COLR/4.jpg" class="premium_img" loading="lazy" alt="premiumimg"></div>
-                    </div>
-                    <div class="col_6"><div class="px_12">
-                        <img src="./assets/premium_images_folder/FEMALE COLR/5.jpg" class="premium_img" loading="lazy" alt="premiumimg"></div>
-                    </div>
-                </div>
                 <div class="row" id="row2">
-                    <div class="col_6"><div class="px_12">
-                        <img src="assets/premium_images_folder/FEMALE CREATIVE/1.JPG" class="premium_img" loading="lazy" alt="premiumimg"></div>
+                    <div class="col_6"><div class="px_12" style="position:relative;">
+                        <img src="./assets/premium_images_folder/female_custom/1 (2).webp" class="premium_img" loading="lazy" alt="premiumimg">
+                    <p class="referenceImg_tag" style=" width:50%;  bottom:12px;">Reference .Img</p></div>
                     </div>
-                    <div class="col_6"><div class="px_12">
-                        <img src="assets/premium_images_folder/FEMALE%20CREATIVE/2.JPG" class="premium_img" loading="lazy" alt="premiumimg"></div>
+                    <div class="col_6"><div class="px_12" style="position:relative;">
+                        <img src="./assets/premium_images_folder/female_custom/1 (3).webp" class="premium_img" loading="lazy" alt="premiumimg">
+                    <p class="referenceImg_tag" style=" width:50%;  bottom:12px;">Reference .Img</p></div>
                     </div>
-                    <div class="col_6"><div class="px_12">
-                        <img src="assets/premium_images_folder/FEMALE%20CREATIVE/3.JPG" class="premium_img" loading="lazy" alt="premiumimg"></div>
+                    <div class="col_6"><div class="px_12" style="position:relative;">
+                        <img src="./assets/premium_images_folder/female_custom/1 (4).webp" class="premium_img" loading="lazy" alt="premiumimg">
+                    <p class="referenceImg_tag" style=" width:50%;  bottom:12px;">Reference .Img</p></div>
                     </div>
-                    <div class="col_6"><div class="px_12">
-                        <img src="assets/premium_images_folder/FEMALE%20CREATIVE/4.JPG" class="premium_img" loading="lazy" alt="premiumimg"></div>
+                    <div class="col_6"><div class="px_12" style="position:relative;">
+                        <img src="./assets/premium_images_folder/female_custom/1 (5).webp" class="premium_img" loading="lazy" alt="premiumimg">
+                    <p class="referenceImg_tag" style=" width:50%;  bottom:12px;">Reference .Img</p></div>
                     </div>
-                    <div class="col_6"><div class="px_12">
-                        <img src="assets/premium_images_folder/FEMALE%20CREATIVE/5.JPG" class="premium_img" loading="lazy" alt="premiumimg"></div>
+                    <div class="col_6"><div class="px_12" style="position:relative;">
+                        <img src="./assets/premium_images_folder/female_custom/1 (6).webp" class="premium_img" loading="lazy" alt="premiumimg">
+                    <p class="referenceImg_tag" style=" width:50%;  bottom:12px;">Reference .Img</p></div>
                     </div>
                 </div>
+
                 <div class="row" id="row3">
-                    <div class="col_6"><div class="px_12">
-                        <img src="/assets/premium_images_folder/FEMALE%20CUSTOM/1.JPG" class="premium_img" loading="lazy" alt="premiumimg"></div>
+                    <div class="col_6"><div class="px_12" style="position:relative;">
+                        <img src="/assets/premium_images_folder/FEMALE%20CUSTOM/1.JPG" class="premium_img" loading="lazy" alt="premiumimg">
+                    <p class="referenceImg_tag" style=" width:50%;  bottom:12px;">Reference .Img</p></div>
                     </div>
-                    <div class="col_6"><div class="px_12">
-                        <img src="/assets/premium_images_folder/FEMALE%20CUSTOM/2.JPG" class="premium_img" loading="lazy" alt="premiumimg"></div>
+                    <div class="col_6"><div class="px_12" style="position:relative;">
+                        <img src="/assets/premium_images_folder/FEMALE%20CUSTOM/2.JPG" class="premium_img" loading="lazy" alt="premiumimg">
+                    <p class="referenceImg_tag" style=" width:50%;  bottom:12px;">Reference .Img</p></div>
                     </div>
-                    <div class="col_6"><div class="px_12">
-                        <img src="/assets/premium_images_folder/FEMALE%20CUSTOM/4.JPG" class="premium_img" loading="lazy" alt="premiumimg"></div>
+                    <div class="col_6"><div class="px_12" style="position:relative;">
+                        <img src="/assets/premium_images_folder/FEMALE%20CUSTOM/4.JPG" class="premium_img" loading="lazy" alt="premiumimg">
+                    <p class="referenceImg_tag" style=" width:50%;  bottom:12px;">Reference .Img</p></div>
                     </div>
-                    <div class="col_6"><div class="px_12">
-                        <img src="/assets/premium_images_folder/FEMALE%20CUSTOM/6.JPG" class="premium_img" loading="lazy" alt="premiumimg"></div>
+                    <div class="col_6"><div class="px_12" style="position:relative;">
+                        <img src="/assets/premium_images_folder/FEMALE%20CUSTOM/6.JPG" class="premium_img" loading="lazy" alt="premiumimg">
+                    <p class="referenceImg_tag" style=" width:50%;  bottom:12px;">Reference .Img</p></div>
                     </div>
-                    <div class="col_6"><div class="px_12">
-                        <img src="/assets/premium_images_folder/FEMALE CUSTOM/7.JPG" class="premium_img" loading="lazy" alt="premiumimg"></div>
+                    <div class="col_6"><div class="px_12" style="position:relative;">
+                        <img src="/assets/premium_images_folder/FEMALE CUSTOM/7.JPG" class="premium_img" loading="lazy" alt="premiumimg">
+                    <p class="referenceImg_tag" style=" width:50%;  bottom:12px;">Reference .Img</p></div>
                     </div>
                 </div>
                 <!-- <div class="row" id="row4">
-                    <div class="col_6"><div class="px_12">
-                        <img src="https://voilastudio.co.in/voilastudio_myntra/images/booking_models_images/eCommerce_photography_female_casualShirt_03_07_23_(11).webp" class="premium_img" loading="lazy" alt="premiumimg"></div>
+                    <div class="col_6"><div class="px_12" style="position:relative;">
+                        <img src="https://voilastudio.co.in/voilastudio_myntra/images/booking_models_images/eCommerce_photography_female_casualShirt_03_07_23_(11).webp" class="premium_img" loading="lazy" alt="premiumimg">
+                    <p class="referenceImg_tag" style=" width:50%;  bottom:12px;">Reference .Img</p></div>
                     </div>
-                    <div class="col_6"><div class="px_12">
-                        <img src="https://voilastudio.co.in/voilastudio_myntra/images/booking_models_images/eCommerce_photography_female_casualShirt_03_07_23_(11).webp" class="premium_img" loading="lazy" alt="premiumimg"></div>
+                    <div class="col_6"><div class="px_12" style="position:relative;">
+                        <img src="https://voilastudio.co.in/voilastudio_myntra/images/booking_models_images/eCommerce_photography_female_casualShirt_03_07_23_(11).webp" class="premium_img" loading="lazy" alt="premiumimg">
+                    <p class="referenceImg_tag" style=" width:50%;  bottom:12px;">Reference .Img</p></div>
                     </div>
-                    <div class="col_6"><div class="px_12">
-                        <img src="https://voilastudio.co.in/voilastudio_myntra/images/booking_models_images/eCommerce_photography_female_casualShirt_03_07_23_(11).webp" class="premium_img" loading="lazy" alt="premiumimg"></div>
+                    <div class="col_6"><div class="px_12" style="position:relative;">
+                        <img src="https://voilastudio.co.in/voilastudio_myntra/images/booking_models_images/eCommerce_photography_female_casualShirt_03_07_23_(11).webp" class="premium_img" loading="lazy" alt="premiumimg">
+                    <p class="referenceImg_tag" style=" width:50%;  bottom:12px;">Reference .Img</p></div>
                     </div>
-                    <div class="col_6"><div class="px_12">
-                        <img src="https://voilastudio.co.in/voilastudio_myntra/images/booking_models_images/eCommerce_photography_female_casualShirt_03_07_23_(11).webp" class="premium_img" loading="lazy" alt="premiumimg"></div>
+                    <div class="col_6"><div class="px_12" style="position:relative;">
+                        <img src="https://voilastudio.co.in/voilastudio_myntra/images/booking_models_images/eCommerce_photography_female_casualShirt_03_07_23_(11).webp" class="premium_img" loading="lazy" alt="premiumimg">
+                    <p class="referenceImg_tag" style=" width:50%;  bottom:12px;">Reference .Img</p></div>
                     </div>
-                    <div class="col_6"><div class="px_12">
-                        <img src="https://voilastudio.co.in/voilastudio_myntra/images/booking_models_images/eCommerce_photography_female_casualShirt_03_07_23_(11).webp" class="premium_img" loading="lazy" alt="premiumimg"></div>
+                    <div class="col_6"><div class="px_12" style="position:relative;">
+                        <img src="https://voilastudio.co.in/voilastudio_myntra/images/booking_models_images/eCommerce_photography_female_casualShirt_03_07_23_(11).webp" class="premium_img" loading="lazy" alt="premiumimg">
+                    <p class="referenceImg_tag" style=" width:50%;  bottom:12px;">Reference .Img</p></div>
                     </div>
                 </div> -->
             </div>
             <div class="col_4 col_lg_12">
-                <div class="px_12">
-                    <p class="modal_text d_lg_none">Model Name: <span class="modal_name">VALENTINE</span></p>
-                    <p class="shoot_text d_lg_none">T-Shirts Premium e-Commerce Shoot</p>
-                    <div style="height: 1px; background-color: #CCC4C4; max-width: 600px; margin-top: 20px;"></div>
+                <div class="px_12" style="position:relative;">
+                    <!-- <p class="detailed_model_heading_name d_lg_none ">Model Name: <span class="modal_name">VALENTINE</span></p> -->
+                    <p class="etailed_model_heading d_lg_none" style=" font-size: 25px;"> Premium e-Commerce Shoot</p>
+                    <div class="detailed_pricing d_lg_none" style="width:100%">
+
+                      <p class="pricing_model" >₹ <span  id="photoshoot_amount_hold"> 1250 - 6000 </span></p> 
+                       </div>
+                          <p class="gst_extra d_lg_none">(18% GST Extra)</p>
+
+        
+                <div style="height: 1px; background-color: #CCC4C4; max-width: 600px; margin-top: 20px;"></div>
                     <div class="">
                         <div class="d-flex px_12 gap_12 pt_30 overflow_scroll">
                             <div class="text_center frame" id="showRow1">
-                                <img class="click_img" src="https://sub.voilastudio.co.in/voila_assets/icon/1.jpg" class="detailed_model_detailedshot_extra" loading="lazy" alt="" >Color Back Drop
+                                <img class="click_img" src="./voila_assets/icon/1.jpg" class="detailed_model_detailedshot_extra" loading="lazy" alt="" >Color Back Drop
+                               
                             </div>
                             <div class="text_center frame" id="showRow2">
-                                <img class="click_img" src="https://sub.voilastudio.co.in/voila_assets/icon/2.jpg" class="detailed_model_detailedshot_extra" loading="lazy" alt="" > Creative / Custom
+                                <img class="click_img" src="./voila_assets/icon/2.jpg" class="detailed_model_detailedshot_extra" loading="lazy" alt="" > Creative / Custom
                             </div>
                             <div class="text_center frame" id="showRow3">
-                                <img class="click_img" src="https://sub.voilastudio.co.in/voila_assets/icon/4.jpg" loading="lazy" alt="" >Outdoor
+                                <img class="click_img" src="./voila_assets/icon/4.jpg" loading="lazy" alt="" >Outdoor
                             </div>
                             <!-- <div class="text_center frame">
                                 <img class="click_img" src="./premium/premium (2).png" loading="lazy" alt="" id="showRow4">Custom Shoot
                             </div> -->
                         </div>
                     </div>
+                    <div id="colorOptions" style="display:flex; width:100%; padding-left:8px; padding-bottom:10px;">
+                                    <div id="colorchange1" style=" cursor:pointer ;background-color:#EACB7B; height:20px; width:20px; margin-left:8px; border-radius:100%"></div>
+                                    <div id="colorchange2" style=" cursor:pointer ;background-color:#CEB2A9; height:20px; width:20px; margin-left:8px;  border-radius:100%"></div>
+                                    <div id="colorchange3" style=" cursor:pointer ;background-color:#969696; height:20px; width:20px; margin-left:8px;  border-radius:100%"></div>
+                                    <div id="colorchange4" style=" cursor:pointer ;background-color:#A59EC6; height:20px; width:20px; margin-left:8px;  border-radius:100%"></div>
+                                    <div id="colorchange5" style=" cursor:pointer ;background-color:#CAAEA6; height:20px; width:20px; margin-left:8px;  border-radius:100%"></div>
+
+                 </div> 
                     <div style="height: 1px; padding-left: 13px; background-color: #CCC4C4; max-width: 600px; margin-top: 10px;"></div>
-                    <p class="modal_text d_lg_block d_none">Model Name: <span class="modal_name">VALENTINE</span></p>
-                    <p class="shoot_text d_lg_block d_none">T-Shirts Premium e-Commerce Shoot</p>
-                </div>         
+                    <!-- <p class="detailed_model_heading_name d_lg_block d_none ">Model Name: <span class="modal_name">VALENTINE</span></p> -->
+                    <p class="etailed_model_heading d_lg_block d_none" style=" font-size: 19px; margin-top:15px;">Premium e-Commerce Shoot</p>
+                    <div class="detailed_pricing d_lg_block d_none" style="width:100%">
+
+                      <p class="pricing_model" >₹ <span  id="photoshoot_amount_hold"> 1250 - 6000 </span></p> 
+                       </div>
+                          <p class="gst_extra d_lg_block d_none">(18% GST Extra)</p>
+                </div> 
+              
+                   
                 <div class="discription px_12">
-                    <p class="discription_text px_12">Description: </p>
+                    <p class="discription_text px_12" style="padding-bottom:4px;">Description: </p>
                     <p class="discription_text2" id="descriptionText" style="padding-left: 12px;"></p>
                 </div>
+                <button class="button_book_now_2" onclick="handleButtonClick2()" style="border:none; width:50% !important; margin:auto">
+                    <a class="booknowtag_2" href="#" style="color:white !important; margin:auto">
+                       Get In Touch
+                    </a>
+                </button> 
             </div>
         </div>
 
@@ -839,7 +1277,51 @@ function UserDeliveredDateclosey() {
 
 
 
+<div id="popupForm3" class="popup-form_2">
+    <div class="form-content_2">
+        <span class="clode_2" onclick="clode_2Form()">&times;</span>
+        <h2 style="font-size:20px">Contact Us</h2>
+        <form class="form" method = "post" action = "<?php echo $_SERVER['PHP_SELF']; ?>" id="booking_query_form" >
+            <label for="name" class="label">Name:</label>
+            <input type="text" id="form_name" name="form_name" required class="input"><br>
+            <label for="phone" class="label">Phone:</label>
+            <input type="text" id="form_mobile" name="form_mobile" required class="input"><br>
+            <label for="email" class="label">Email:</label>
+            <input type="email" id="form_email" name="form_email" required class="input"><br>
+            <label for="message" class="label">Message:</label>
+            <textarea id="form_message" name="form_message" required class="textarea2 input" style="padding: 10px !important;
+            border: 1px solid #ccc !important;
+            border-radius: 5px;
+            font-size: 16px;"></textarea><br>
+                        <div id="form_error" style="color: red;"></div>
 
+            <input type="button" value="Submit" class="input" style="text-align:center; width:100% ;background: " onclick="submitBookingQueryForm()">
+
+        </form>
+    </div>
+
+</div>   <script>
+        function handleButtonClick2() {
+            const now = new Date();
+            const hours = now.getHours();
+            const minutes = now.getMinutes();
+            if(window.innerWidth <800 ){
+                if ( hours > 9 || (hours === 9 && minutes >= 00)) {
+                    if (hours < 19 || (hours === 19 && minutes === 0)) {
+                        window.location.href = 'tel:+91 9821554548';
+                        return;
+                    }
+                }
+            }
+
+            document.getElementById("popupForm3").style.display = "block";
+        }
+
+        function clode_2Form() {
+            document.getElementById("popupForm3").style.display = "none";
+        }
+
+    </script>
 
 
 <script>
@@ -1245,39 +1727,68 @@ function closeBothSignin() {
 </script>
 
 
+<script>
+    const rows = ['row1', 'row2', 'row3'];
+    const imgs = ['showRow1', 'showRow2', 'showRow3'];
+    const descriptions = [
+        "Enhance your eCommerce visuals with VOILA Studio's premium shoots! Choose from a variety of color backdrops using our swatch options to perfectly match your brand's aesthetic. Our expert team will bring your vision to life, ensuring your products stand out. Customize your shoot with the colors you need, and we'll deliver stunning, tailored results. Let's create something extraordinary together!",
+        "Welcome to our Premium Custom/Creative Shoots page! Choose from a variety of tailored shoot options or share your vision for a custom shoot. Our expert team is here to bring your creative ideas to life and meet your unique needs. Let's create something amazing together!",
+        "Enhance your eCommerce visuals with VOILA Studio's premium shoots! Choose from a variety of tailored Outdoor shoot options or share your creative vision with us. Our expert team is dedicated to bringing your ideas to life and crafting shoots that perfectly meet your needs. Let's make your creative dreams come true!",
+    ];
+
+    function showRow(index) {
+        rows.forEach(row => {
+            document.getElementById(row).style.display = 'none';
+        });
+        document.getElementById(rows[index]).style.display = 'flex';
+        document.getElementById('descriptionText').textContent = descriptions[index];
+
+        // Show or hide color options based on the row
+        const colorOptions = document.getElementById('colorOptions');
+        if (index === 0) {
+            colorOptions.style.display = 'flex';
+        } else {
+            colorOptions.style.display = 'none';
+        }
+    }
+
+    imgs.forEach((img, index) => {
+        document.getElementById(img).addEventListener('click', () => {
+            showRow(index);
+        });
+    });
+
+    document.addEventListener('DOMContentLoaded', () => {
+        // Set default state
+        showRow(0);
+    });
+</script>
+
+
 
 <script>
-        const rows = ['row1', 'row2', 'row3'];
-        const imgs = ['showRow1', 'showRow2', 'showRow3'];
-        const descriptions = [
-            "This is the description for Color Back Drop.",
-            "This is the description for Creative.",
-            "This is the description for Outdoor.",
-          
-        ];
+       document.addEventListener('DOMContentLoaded', () => {
+    const rows = ['color1', 'color2', 'color3','color4','color5'];
+    const imgs = ['colorchange1', 'colorchange2', 'colorchange3','colorchange4','colorchange5'];
 
-        function showRow(index) {
-            rows.forEach(row => {
-                document.getElementById(row).style.display = 'none';
-            });
-            document.getElementById(rows[index]).style.display = 'flex';
-            document.getElementById('descriptionText').textContent = descriptions[index];
-        }
-
-        imgs.forEach((img, index) => {
-            document.getElementById(img).addEventListener('click', () => {
-                showRow(index);
-            });
+    function colorchange(index) {
+        rows.forEach(row => {
+            document.getElementById(row).style.display = 'none';
         });
+        document.getElementById(rows[index]).style.display = 'flex';
+    }
 
-        document.addEventListener('DOMContentLoaded', () => {
-            // Set default state
-            showRow(0);
+    imgs.forEach((img, index) => {
+        document.getElementById(img).addEventListener('click', () => {
+            colorchange(index);
         });
-    </script>
+    });
 
+    
+    colorchange(0);
+});
 
-
+</script>
 
 
 
@@ -1443,7 +1954,70 @@ $(document).ready(function() {
 </div>
 
 <script src="./assets/js/more.js"></script>
+<script>
+                function submitBookingQueryForm(){
 
+				var name =  $("#form_name").val();
+				var mobile =  $("#form_mobile").val();
+				var email =  $("#form_email").val();
+				var message	 =  $("#form_message").val();
+                $("#form_error").html('');
+
+
+
+                        
+		        if( name.length > 0 &&  mobile.length >0 && email.length > 0 && message.length > 0){
+
+                    var mobile_value = 'false';
+                    var email_value = 'false';
+                    
+
+                    // alert( ' lenght are oaky');
+
+                             var phonePattern =/^\d{10}$/;
+                            if (!phonePattern.test(mobile)) {
+                                $("#form_error").html('Please enter a valid 10-digit phone number.');
+                                // alert( ' lenght are oaky2');
+
+                                return;
+                            }else{
+
+                                mobile_value = 'true';
+                              
+                            }
+						    
+                            var emailPattern = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|.(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                            if (!emailPattern.test(email)) {
+                                $("#form_error").html('Please enter a valid email address.');
+                                return;
+                            }else{
+
+                                email_value = 'true';
+                              
+                            }
+						
+
+
+                         if(mobile_value == 'true' &&  email_value == 'true'){      
+						     document.getElementById("booking_query_form").submit();
+
+                         }
+
+                     
+						
+				}else{
+
+						// alert("please fill your details properly");
+						
+						$("#form_error").html('please fill your details properly');
+	
+				}			
+                        
+      
+
+			}
+
+</script>
     
 
 </body>
