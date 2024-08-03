@@ -345,7 +345,7 @@ border-radius: 5px;
         }
         .frame:hover {
             -webkit-text-stroke-width: .5px;
-            box-shadow: -1.35px 1px 5.6px 2px #00000073;
+            box-shadow: -1.35px 1px 5.6px 1px #00000073;
         }
         #row2, #row3, #row4 {
             display: none;
@@ -914,7 +914,7 @@ border-radius: 5px;
             <div class="col_4 col_lg_12">
                 <div class="px_12" style="position:relative;">
                     <!-- <p class="detailed_model_heading_name d_lg_none ">Model Name: <span class="modal_name">VALENTINE</span></p> -->
-                    <p class="etailed_model_heading d_lg_none" style=" font-size: 25px;"> Premium e-Commerce Shoot</p>
+                    <p class="etailed_model_heading d_lg_none" style=" font-size: 23px;"> Premium e-Commerce Shoot</p>
                     <div class="detailed_pricing d_lg_none" style="width:100%">
 
                       <p class="pricing_model" >₹ <span  id="photoshoot_amount_hold"> 1250 - 6000 </span></p> 
@@ -925,15 +925,15 @@ border-radius: 5px;
                 <div style="height: 1px; background-color: #CCC4C4; max-width: 600px; margin-top: 20px;"></div>
                     <div class="">
                         <div class="d-flex px_12 gap_12 pt_30 overflow_scroll">
-                            <div class="text_center frame" id="showRow1">
-                                <img class="click_img" src="./voila_assets/icon/1.jpg" class="detailed_model_detailedshot_extra" loading="lazy" alt="" >Color Back Drop
+                            <div class="text_center frame" style=" font-size:11px" id="showRow1">
+                                <img class="click_img" src="./voila_assets/icon/1.jpg" class="detailed_model_detailedshot_extra" style=" margin-bottom:10px" loading="lazy" alt="" >Color Back Drop
                                
                             </div>
-                            <div class="text_center frame" id="showRow2">
-                                <img class="click_img" src="./voila_assets/icon/2.jpg" class="detailed_model_detailedshot_extra" loading="lazy" alt="" > Creative / Custom
+                            <div class="text_center frame" style=" font-size:11px" id="showRow2">
+                                <img class="click_img" src="./voila_assets/icon/2.jpg" class="detailed_model_detailedshot_extra" style=" margin-bottom:10px" loading="lazy" alt="" > Creative / Custom
                             </div>
-                            <div class="text_center frame" id="showRow3">
-                                <img class="click_img" src="./voila_assets/icon/4.jpg" loading="lazy" alt="" >Outdoor
+                            <div class="text_center frame" style=" font-size:11px" id="showRow3">
+                                <img class="click_img" src="./voila_assets/icon/4.jpg" loading="lazy" style=" margin-bottom:10px" alt="" >Outdoor
                             </div>
                             <!-- <div class="text_center frame">
                                 <img class="click_img" src="./premium/premium (2).png" loading="lazy" alt="" id="showRow4">Custom Shoot
