@@ -104,7 +104,10 @@ s0.parentNode.insertBefore(s1,s0);
 
 <body>
 	<!-- banner -->
-
+	<div>
+	<img class="desktop_img"  src="./assets/img/become_partner_img/Look BOOK Desktop.jpg" alt="desktopimg">
+	<img class=" mobile_img"  src="https://sub.voilastudio.co.in/assets/img/become_partner_img/LOOKBOOK SHOOT.jpg" alt="mobileimg ">
+</div>
 	<!-- page details -->
 	<div class="breadcrumb-agile">
 		<nav aria-label="breadcrumb">

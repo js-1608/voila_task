@@ -323,17 +323,11 @@ border-radius: 5px;
             font-size: 20px;
             line-height: 30px;
         }
-        .modal_text {
-            font-size: 29px;
-            margin-top: 20px;
-        }
+      
         .modal_name {
             font-weight: 900;
         }
-        .shoot_text {
-            font-size: 21px;
-            margin-top: 8px;
-        }
+       
         .d_none {
             display: none;
         }
@@ -503,8 +497,14 @@ border-radius: 5px;
             </div>
             <div class="col_4 col_lg_12">
                 <div class="px_12">
-                    <p class="modal_text d_lg_none">Model Name: <span class="modal_name">VALENTINE</span></p>
-                    <p class="shoot_text d_lg_none">T-Shirts Premium e-Commerce Shoot</p>
+                    <p class="modal_text d_lg_none detailed_model_heading_nam">Model Name: <span class="modal_name">VALENTINE</span></p>
+                    <p class="shoot_text d_lg_none detailed_model_heading">T-Shirts Premium e-Commerce Shoot</p>
+                    <div class="detailed_pricing">
+                        <p>₹ </p>
+                        <p id="photoshoot_amount_hold">
+                           550 
+                        </p>
+                    </div>
                     <div style="height: 1px; background-color: #CCC4C4; max-width: 600px; margin-top: 20px;"></div>
                     <div class="">
                         <div class="d-flex px_12 gap_12 pt_30 overflow_scroll">

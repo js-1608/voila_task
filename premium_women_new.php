@@ -940,14 +940,18 @@ border-radius: 5px;
                             </div> -->
                         </div>
                     </div>
-                    <div id="colorOptions" style="display:flex; width:100%; padding-left:8px; padding-bottom:10px;">
+                    <div id="colorOptions" >
+                    <p> Available Solid Color Backdrops </p>
+                          <div style="display:flex; width:100%; padding-left:8px; padding-bottom:10px;">
                                     <div id="colorchange1" style=" cursor:pointer ;background-color:#EACB7B; height:20px; width:20px; margin-left:8px; border-radius:100%"></div>
                                     <div id="colorchange2" style=" cursor:pointer ;background-color:#CEB2A9; height:20px; width:20px; margin-left:8px;  border-radius:100%"></div>
                                     <div id="colorchange3" style=" cursor:pointer ;background-color:#969696; height:20px; width:20px; margin-left:8px;  border-radius:100%"></div>
                                     <div id="colorchange4" style=" cursor:pointer ;background-color:#A59EC6; height:20px; width:20px; margin-left:8px;  border-radius:100%"></div>
                                     <div id="colorchange5" style=" cursor:pointer ;background-color:#CAAEA6; height:20px; width:20px; margin-left:8px;  border-radius:100%"></div>
 
-                 </div> 
+                            </div>
+                          
+                     </div>
                     <div style="height: 1px; padding-left: 13px; background-color: #CCC4C4; max-width: 600px; margin-top: 10px;"></div>
                     <!-- <p class="detailed_model_heading_name d_lg_block d_none ">Model Name: <span class="modal_name">VALENTINE</span></p> -->
                     <p class="etailed_model_heading d_lg_block d_none" style=" font-size: 19px; margin-top:15px;">Premium e-Commerce Shoot</p>
