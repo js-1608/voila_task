@@ -1,0 +1,175 @@
+
+
+@font-face{
+  font-family: 'inter';
+  src: url("../mega_menu/fonts/inter/Inter-Regular.ttf") format("truetype");
+ }
+
+  
+  * {
+    box-sizing: border-box;
+    font-family: 'inter';
+  }
+  
+  body {
+    margin: 0;
+    padding: 0;
+  }
+  section#popupForm,
+section#popupFormSignIn {
+  display: none;
+}
+.popup {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+  left: 0;
+  z-index: 9;
+}
+.container_sign {
+  display: flex;
+  justify-content: center;
+  /* align-content: center; */
+  width: 100%;
+  position: absolute;
+}
+.menus_sign {
+    position: absolute;
+    top: 12vh;
+    z-index: 1;
+    width: 350px;
+    /* background-color: white; */
+    text-align: center;
+    border-radius: 20px;
+    background: rgba(255, 255, 255);
+    box-shadow: 0px 3.52206px 79.2463px rgb(0 0 0 / 25%);
+    backdrop-filter: blur(59.5px);
+    height: auto;
+
+}
+img.imageLogos {
+  width: 140px;
+}
+.inputField {
+    position: relative;
+    width: 100%;
+}
+
+
+.input {
+    width: 92%;
+    padding: 10px 10px 0;
+    color: black;
+    background: none;
+    border: 0;
+    /* border-bottom: 1px solid; */
+    outline: none;
+    font-size: 16px;
+    text-align: left;
+
+}
+.name {
+  margin: 10px auto 3px;
+  text-align: left;
+  width: 80%;
+  position: absolute;
+  left: 20px;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 18px;
+  display: flex;
+  justify-content: left;
+}
+.signup_submit {
+    margin: 10px auto;
+    width: 95%;
+    padding: 10px 20px;
+    border: 1px solid;
+    border-radius: 20px;
+    background: #f1f1f1;
+    color: black;
+    font-weight: 600;
+    font-size: 18px;
+}
+.signup_submit:hover {
+background-color: #d6d6d6;
+transition: 0.3s ease-in-out;}
+img.cross {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 25px;
+}
+.signup_extra_submit {
+    margin: 0px 0 15px 0;
+    width: 90%;
+    padding: -17px 20px;
+    font-size: 13px;
+    border: 0;
+    border-radius: 20px;
+    background: none;
+    color: black;
+    font-weight: 500;
+    text-align: center;
+
+}
+.signup_extra_submit:hover {
+border-radius: 0;
+border-bottom: 1px solid #9d9d9d;
+width: 220px;
+outline: none;
+}
+#demo {
+    font-size: 25px;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin: 10px;
+    color: black;
+    font-family: 'Montserrat';
+
+}
+.mobileInput {
+    position: relative;
+    width: 100%;
+}
+.sendOtp {
+    position: absolute;
+    right: 0;
+    border: 0;
+    top: 5px;
+    cursor: grab;
+    padding: 6px 16px;
+    color: #949090;
+    background: none;
+    font-size: 12px;
+}
+.signup_submit_division {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 100%;
+}
+img.signuparrow {
+    position: absolute;
+    right: 115px;
+    width: 20px;
+    border-radius: 50%;
+}
+.showpass {
+  position: absolute;
+  right: 0;
+  border: 0;
+  top: 4px;
+  cursor: grab;
+  padding: 6px 16px;
+  color: #949090 !important;
+  font-size: 12px;
+
+}
+input.signup_submit {
+    background: none;
+}
+

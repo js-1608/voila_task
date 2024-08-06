@@ -1,0 +1,518 @@
+@charset "UTF-8";
+/* ==========================================================================
+   $Table of Contents
+   ========================================================================== */
+/**
+ *
+ * $Variables
+ * 		$Colors
+ *		$Fonts
+ * $Mixins
+ * $Global
+ *		$Typography
+ * $Animations
+ * $Buttons
+ * $Main Nav
+ *
+ */
+/* ==========================================================================
+   $Variables
+   ========================================================================== */
+/* $Colors
+   ========================================================================== */
+/* $Fonts
+   ========================================================================== */
+/* $Radius
+   ========================================================================== */
+/* $Ease
+   ========================================================================== */
+/* ==========================================================================
+   $Mixins
+   ========================================================================== */
+/* ==========================================================================
+   $Partials
+   ========================================================================== */
+/* $Clearfix
+   ========================================================================== */
+.main-nav-wrap:before, .main-nav-wrap:after {
+  /* content: ""; */
+  display: table;
+}
+.main-nav-wrap:after {
+  clear: both;
+}
+
+/* ==========================================================================
+   $Global
+   ========================================================================== */
+html {
+  box-sizing: border-box;
+}
+
+/**
+ * 1. Pixels in responsive design is weird, right?
+ * 	  I've had to re-adjust my mobile/desktop sizes anyways.
+ * 	  Because EM's and REM's don't scale to my liking. ¯\_(ツ)_/¯
+ * 	  Browser zooming ensures that it scales on zoom in/out.
+ */
+body {
+  /* background-color: #F8F3E6; */
+  color: #1f1f1f;
+  font: 16px/1.5 "Sarala", sans-serif;
+  /* 1 */
+  /* max-width: 1383px; */
+  margin: auto;
+  padding: 1.5em;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+a {
+  color: inherit;
+}
+
+:focus {
+  box-shadow: 0 0 6px 1px rgba(91, 196, 113, 0.75);
+  outline: none;
+}
+
+.no-boxshadow :focus {
+  outline: 1px auto #5bc471;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* $Typography
+   ========================================================================== */
+h1 {
+  font-size: 60px;
+  line-height: 1.2;
+  margin: 48px 0 24px;
+}
+
+h2 {
+  font-size: 38px;
+  line-height: 1.26;
+  margin: 24px 0;
+}
+
+h3 {
+  font-size: 25px;
+  line-height: 1.92;
+  margin: 24px 0 0;
+}
+
+h4 {
+  font-size: 24px;
+  line-height: 1.5;
+  margin: 12px 0 0;
+}
+
+p {
+  margin: 0 0 24px;
+}
+
+/* ==========================================================================
+   $Animations
+   ========================================================================== */
+@-webkit-keyframes fly-in--up {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fly-in--up {
+  0% {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* ==========================================================================
+   $Buttons
+   ========================================================================== */
+.btn {
+  display: inline-block;
+  background-color: transparent;
+  border-radius: 5px;
+  border: none;
+  margin-bottom: 24px;
+  padding: 6px 24px;
+  text-align: center;
+  /* transition: all 0.24s cubic-bezier(0.165, 0.84, 0.44, 1); */
+}
+.btn [class^=ion-] {
+  color: #000000;
+}
+
+.btn-primary {
+  background-color: #5bc471;
+  color: #fff;
+  width: 100%;
+}
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active {
+  background-color: white;
+}
+
+/* ==========================================================================
+   $Main Nav
+   ========================================================================== */
+.is-hidden {
+  position: absolute;
+  opacity: 0;
+  transform: translateX(140%);
+}
+
+.main-nav-wrap {
+  overflow: hidden;
+}
+
+.main-nav-trigger.active {
+  background: none;
+  padding: 0;
+}
+
+.main-nav,
+.main-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.js .main-nav {
+  display: none;
+}
+
+.main-nav {
+  background-color: #1A936F;
+  border-radius: 5px;
+  filter: drop-shadow(0 0 6px 1px black);
+  color: #fff;
+  position: relative;
+}
+.main-nav:before {
+  border: 8px solid transparent;
+  border-bottom-color: #e7e7e7;
+  content: "";
+  margin: auto;
+  position: absolute;
+  /* right: 0; */
+  left: 30px;
+  bottom: 100%;
+  height: 0;
+  width: 0;
+  transform: translateY(100%);
+}
+.main-nav.active:before {
+  -webkit-animation: fly-in--up 0.26s cubic-bezier(0.165, 0.84, 0.44, 1) 0.2s forwards;
+          animation: fly-in--up 0.26s cubic-bezier(0.165, 0.84, 0.44, 1) 0.2s forwards;
+}
+
+.main-nav a {
+  display: block;
+  padding: 12px 8px;
+  text-decoration: none;
+}
+
+/* 2nd Level Links
+   ========================================================================== */
+.main-dropdown {
+  font-size: 14px;
+}
+
+.moves-in > li:not(.subnav-promo) > a {
+  transform: translateX(-100%);
+  position: absolute;
+  opacity: 0;
+}
+
+.nav-in {
+  -webkit-animation: fly-in--up 0.24s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+          animation: fly-in--up 0.24s cubic-bezier(0.165, 0.84, 0.44, 1) forwards;
+}
+
+.nav-out {
+  animation: fly-in--up 0.24s cubic-bezier(0.165, 0.84, 0.44, 1) reverse;
+}
+
+.subnav,
+.subnav a {
+  /* transition: all 0.24s cubic-bezier(0.165, 0.84, 0.44, 1); */
+}
+
+.subnav a {
+  transform: translateX(0);
+}
+
+.has-subnav-link {
+  /* transition: all 0.24s cubic-bezier(0.165, 0.84, 0.44, 1); */
+}
+.has-subnav-link:after {
+  content: "";
+  display: inline-block;
+  float: right;
+  font-family: "Ionicons";
+}
+
+.go-back {
+  color: #C6DABF;
+}
+
+.subnav-promo {
+  background-color: #167d5f;
+  border-top: 1px solid #147055;
+  padding-top: 14px;
+}
+
+.promo-img {
+  display: block;
+  margin: auto;
+}
+
+.promo-body {
+  padding: 0 24px 12px;
+}
+
+.promo-body a {
+  display: inline-block;
+  padding: 0;
+}
+a.paymentbaglinksdyna{
+  position: relative;
+  text-decoration: none;
+  display: flex;
+  width: 35px;
+}
+a.paymentbaglinksdyna img {
+  width: 25px;
+}
+img#social_icons_imgsdyna {
+  width: 24px;
+}
+b.socialiconsdynamo {
+  width: 80px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+div#total_cart_items_modelsendynamo {
+  position: absolute;
+  top: -6px;
+  right: 0;
+  border: 1px solid;
+  border-radius: 50%;
+  display: flex;
+  width: 20px;
+  height: 20px;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  letter-spacing: 0;
+  font-size: 11px;
+}
+.searchandicons {
+  display: flex;
+  align-items: center;
+}
+b.searchresultsanddynamo {
+  position: relative;
+  width: 160vh;
+}
+img.searchicononsearchbar {
+  width: 28px;
+  position: absolute;
+  top: 1px;
+  right: 4px;
+}
+.mobilemenucompanylogo {
+  width: 200px;
+}
+.btn-primary {
+width: 55px;
+  padding: 8px 0;
+}
+.main-nav-wrap {
+  overflow: visible;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 40px;
+  background: white;
+  position: sticky;
+  top: 0;
+  z-index: 9;
+}
+
+@media (min-width: 990px) {
+
+  
+
+  .main-nav-trigger {
+    display: none;
+  }
+
+ 
+
+  .main-nav {
+    background-color: transparent;
+  }
+  .main-nav:before {
+    content: none;
+  }
+
+  .main-nav > li {
+    float: left;
+    width: 24%;
+    height: 45px;
+  }
+
+  .main-nav > li > a {
+    color: #000000;
+    text-align: center;
+    font-size: 14px;
+  }
+
+  .main-nav > .has-subnav > a:after {
+    content: "";
+    margin-left: 6px;
+    float: none;
+    font-size: 75%;
+  }
+
+  .main-dropdown {
+    background-color: #ffffff;
+    border: 1px solid #d9d9d9;
+    color: #000;
+    display: table;
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    left: 0;
+    /* transition: all 0.24s cubic-bezier(0.165, 0.84, 0.44, 1); */
+    transform: translateY(15%);
+    visibility: hidden;
+    width: 60%;
+  }
+
+  .main-dropdown > li {
+    display: table-cell;
+    vertical-align: top;
+  }
+
+  .hover > .has-subnav-link {
+    background-color: #ffffff;
+    color: #000;
+  }
+
+  .hover .main-dropdown {
+    opacity: 1;
+    transform: inherit;
+    visibility: visible;
+    width: 100%;
+    /* transition: center .1s ease-out,width .1s ease-out; */
+  }
+
+  .nav-col {
+    border-right: 1px solid #d9d9d9;
+    margin: 12px 0;
+    padding: 12px 24px;
+    width: 21%;
+  }
+
+  .nav-col .has-subnav + .has-subnav {
+    margin-top: 24px;
+  }
+
+  .subnav-header {
+    font-weight: 700;
+    border-bottom: 1px solid;
+    margin-bottom: 6px;
+  }
+  .subnav-header:after {
+    content: none;
+  }
+
+  .subnav a {
+    padding: 3px 0;
+    vertical-align: top;
+  }
+  .subnav a:hover {
+    transition: left .1s ease-out,width .1s ease-out;
+    font-weight: 600; 
+    }
+
+  .go-back,
+.view-all {
+    display: none !important;
+  }
+
+  .subnav-promo {
+    border: none;
+  }
+  .mobilemenucompanylogo {
+    width: 200px;
+}
+
+  }
+
+@media screen and (min-width: 300px) {
+  .mobilemenucompanylogo {
+    width: 200px;
+    margin-left: 55px;
+}
+.main-nav-wrap {
+  overflow: visible;
+  width: 100%;
+  display: inline-block;
+  justify-content: space-between;
+  align-items: center;
+}
+.btn-primary {
+  width: 55px;
+  padding: 8px 0;
+  position: absolute;
+  top: 10px;
+  left: 0;
+  background-color: white;
+  box-shadow: none;
+}
+span.ion-navicon-round {
+  font-size: 30px;
+  position: absolute;
+  top: -10px;
+}
+ul.main-nav.active {
+  position: absolute;
+  top: 40px;
+  width: 100vw;
+}
+.mobilemenucompanylogo {
+  width: 200px;
+  margin-left: 55px;
+  display: flex;
+  height: 40px;
+  margin-top: -7px;
+}
+.searchandicons {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 0;
+    top: 5px;
+}
+  }
