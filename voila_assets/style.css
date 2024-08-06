@@ -32,17 +32,17 @@ a{text-decoration: none !important;  }
     justify-content: space-between;
     align-items: center;
     background-color: white;
-    padding: 10px ;
+   z-index: 1000 !important;
     border-bottom: 1px solid #dbdbdb;
-    position: fixed;
-    width: 99%;
-    top: 0;
-    z-index: 1000;
+    position: sticky;
+    width: 100%;
+    top: 70px;
 }
 
 .logo {
     font-size: 24px;
     font-weight: bold;
+    padding: 15px;
 }
 
 
