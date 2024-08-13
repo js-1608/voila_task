@@ -4,9 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-</head>
-<style>
-    .row {
+    <style>
+        .row {
             width: 100%;
             display: flex;
             justify-content: space-between;
@@ -125,7 +124,8 @@
          
         }
         }
-</style>
+    </style>
+</head>
 <body>
     <div>
         <div class="row">
@@ -206,16 +206,16 @@
                     <div style="height: 1px; background-color: #CCC4C4; max-width: 600px; margin-top: 20px;"></div>
                     <div class="">
                         <div class="d-flex px_12 gap_12 pt_30 overflow_scroll">
-                            <div class="text_center frame">
+                            <div class="text_center frame" id="showRow1">
                                 <img class="click_img" src="./assets/premium_images_folder/MALE COLOR/VOIL6814.jpg" class="detailed_model_detailedshot_extra" loading="lazy" alt="" id="showRow1">Color Back Drop
                             </div>
-                            <div class="text_center frame">
+                            <div class="text_center frame" id="showRow2">
                                 <img class="click_img" src="assets/premium_images_folder/MALE CREATIVE/1.JPG" class="detailed_model_detailedshot_extra" loading="lazy" alt="" id="showRow2"> Creative
                             </div>
-                            <div class="text_center frame">
+                            <div class="text_center frame"  id="showRow3">
                                 <img class="click_img" src="/assets/premium_images_folder/MALE%20CUSTOM/1.jpg" loading="lazy" alt="" id="showRow3">Outdoor
                             </div>
-                            <div class="text_center frame">
+                            <div class="text_center frame"  id="showRow4">
                                 <img class="click_img" src="./premium/premium (2).png" loading="lazy" alt="" id="showRow4">Custom Shoot
                             </div>
                         </div>
@@ -225,8 +225,10 @@
                     <p class="shoot_text d_lg_block d_none">T-Shirts Premium e-Commerce Shoot</p>
                 </div>         
                 <div class="discription px_12">
-                    <p class="discription_text px_12">Description: </p>
-                    <p class="discription_text2" id="descriptionText" style="padding-left: 12px;"></p>
+                    <div class="discription_text2 d_none" id="description1" style="padding-left: 12px;">This is the description for Color Back Drop.</div>
+                    <div class="discription_text2 d_none" id="description2" style="padding-left: 12px;">This is the description for Creative.</div>
+                    <div class="discription_text2 d_none" id="description3" style="padding-left: 12px;">This is the description for Outdoor.</div>
+                    <div class="discription_text2 d_none" id="description4" style="padding-left: 12px;">This is the description for Custom Shoot.</div>
                 </div>
             </div>
         </div>
@@ -235,19 +237,22 @@
     <script>
         const rows = ['row1', 'row2', 'row3', 'row4'];
         const imgs = ['showRow1', 'showRow2', 'showRow3', 'showRow4'];
-        const descriptions = [
-            "This is the description for Color Back Drop.",
-            "This is the description for Creative.",
-            "This is the description for Outdoor.",
-            "This is the description for Custom Shoot."
-        ];
+        const descriptions = ['description1', 'description2', 'description3', 'description4'];
 
         function showRow(index) {
+            // Hide all rows
             rows.forEach(row => {
                 document.getElementById(row).style.display = 'none';
             });
+            // Show the selected row
             document.getElementById(rows[index]).style.display = 'flex';
-            document.getElementById('descriptionText').textContent = descriptions[index];
+
+            // Hide all descriptions
+            descriptions.forEach(desc => {
+                document.getElementById(desc).style.display = 'none';
+            });
+            // Show the selected description
+            document.getElementById(descriptions[index]).style.display = 'block';
         }
 
         imgs.forEach((img, index) => {
@@ -262,4 +267,4 @@
         });
     </script>
 </body>
-</html> 
+</html>
