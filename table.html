@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sticky Header Table</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        thead {
+            background-color: #f2f2f2;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+
+        tbody {
+            display: block;
+            max-height: 200px;
+            overflow-y: auto;
+            width: 100%;
+        }
+
+        thead, tbody tr {
+            display: table;
+            width: 100%;
+            table-layout: fixed;
+        }
+
+        thead th {
+            position: sticky;
+            top: 0;
+            background-color: #f2f2f2;
+            z-index: 1;
+        }  
+
+        tbody td {
+            border-bottom: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+ <div style="padding-top: 60px;">
+    <table>
+        <thead>
+            <tr>
+                <th>Header 1</th>
+                <th>Header 2</th>
+                <th>Header 3</th>
+                <th>Header 4</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Data 1</td>
+                <td>Data A</td>
+                <td>Data Alpha</td>
+                <td>Data I</td>
+            </tr>
+            <tr>
+                <td>Data 2</td>
+                <td>Data B</td>
+                <td>Data Beta</td>
+                <td>Data II</td>
+            </tr>
+            <tr>
+                <td>Data 3</td>
+                <td>Data C</td>
+                <td>Data Gamma</td>
+                <td>Data III</td>
+            </tr>
+            <tr>
+                <td>Data 4</td>
+                <td>Data D</td>
+                <td>Data Delta</td>
+                <td>Data IV</td>
+            </tr>
+            <tr>
+                <td>Data 5</td>
+                <td>Data E</td>
+                <td>Data Epsilon</td>
+                <td>Data V</td>
+            </tr>
+            <tr>
+                <td>Data 6</td>
+                <td>Data F</td>
+                <td>Data Zeta</td>
+                <td>Data VI</td>
+            </tr>
+            <tr>
+                <td>Data 7</td>
+                <td>Data G</td>
+                <td>Data Eta</td>
+                <td>Data VII</td>
+            </tr>
+            <tr>
+                <td>Data 8</td>
+                <td>Data H</td>
+                <td>Data Theta</td>
+                <td>Data VIII</td>
+            </tr>
+            <tr>
+                <td>Data 9</td>
+                <td>Data I</td>
+                <td>Data Iota</td>
+                <td>Data IX</td>
+            </tr>
+            <tr>
+                <td>Data 10</td>
+                <td>Data J</td>
+                <td>Data Kappa</td>
+                <td>Data X</td>
+            </tr>
+            <!-- Add more rows as needed -->
+        </tbody>
+    </table>
+ </div>
+</body>
+</html>
