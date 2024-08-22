@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -117,4 +117,59 @@ setTimeout(autoSlide, 3000);
 showAnnouncement(currentIndex);
 </script>
 </body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Announcement Bar</title>
+    <style>
+        .announcement-bar {
+            position: relative;
+            width: 100%;
+            background-color: #333;
+            color: white;
+            border-radius: 5px;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 50px;
+        }
+
+        .announcement-container {
+            display: flex;
+            width: 300%;
+            animation: slide 9s infinite;
+        }
+
+        .announcement-text {
+            width: 100%;
+            text-align: center;
+            font-size: 18px;
+            flex-shrink: 0;
+        }
+
+        @keyframes slide {
+            0% { transform: translateX(0%); }
+            33.33% { transform: translateX(0%); }
+            44.44% { transform: translateX(-100%); }
+            77.77% { transform: translateX(-100%); }
+            88.88% { transform: translateX(-200%); }
+            100% { transform: translateX(-200%); }
+        }
+    </style>
+</head>
+<body>
+    <div class="announcement-bar">
+        <div class="announcement-container">
+            <div class="announcement-text">Announcement 1: Welcome to our website!</div>
+            <div class="announcement-text">Announcement 2: Check out our latest updates.</div>
+            <div class="announcement-text">Announcement 3: Don't miss our special offers!</div>
+        </div>
+    </div>
+</body>
 </html>
+ 

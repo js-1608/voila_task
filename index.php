@@ -2242,31 +2242,39 @@ Fashion is the expression of self and freedom within a particular time, place, a
     <div style="display: flex; gap: 12px;" class=" overflow_scroll">
         <div class="flex_none">
             <img src="./city icons/Ludhiana.jpg" alt="Ludhiana" class="country_img_width">
+            <div class="city_name">Ludhiana</div>
         </div>
         <div class="flex_none">
-            <img src="./city icons/Mumbai.jpg" alt="Ludhiana" class="country_img_width">
-
+            <img src="./city icons/Mumbai.jpg" alt="Mumbai" class="country_img_width">
+            <div class="city_name">Mumbai</div>
         </div>
         <div class="flex_none">
-            <img src="./city icons/Noida.jpg" alt="Ludhiana" class="country_img_width">
+            <img src="./city icons/Noida.jpg" alt="Noida" class="country_img_width">
+            <div class="city_name">Noida</div>
         </div>
         <div class="flex_none">
-            <img src="./city icons/Agra.jpg" alt="Ludhiana" class="country_img_width">
+            <img src="./city icons/Agra.jpg" alt="Agra" class="country_img_width">
+            <div class="city_name">Agra</div>
         </div> 
            <div class="flex_none">
-            <img src="./city icons/Bangalore.jpg" alt="Ludhiana" class="country_img_width">
+            <img src="./city icons/Bangalore.jpg" alt="Bangalore" class="country_img_width">
+            <div class="city_name">Bangalore</div>
         </div>   
          <div class="flex_none">
-            <img src="./city icons/Chennai.jpg" alt="Ludhiana" class="country_img_width">
+            <img src="./city icons/Chennai.jpg" alt="Chennai" class="country_img_width">
+            <div class="city_name">Chennai</div>
         </div>    
         <div class="flex_none">
-            <img src="./city icons/Delhi.jpg" alt="Ludhiana" class="country_img_width">
+            <img src="./city icons/Delhi.jpg" alt="Delhi" class="country_img_width">
+            <div class="city_name">Delhi</div>
         </div> 
            <div class="flex_none">
-            <img src="./city icons/Gurgaon.jpg" alt="Ludhiana" class="country_img_width">
+            <img src="./city icons/Gurgaon.jpg" alt="Gurgaon" class="country_img_width">
+            <div class="city_name">Gurgaon</div>
         </div>    
           <div class="flex_none">
-            <img src="./city icons/Hyderabad.png" alt="Ludhiana" class="country_img_width">
+            <img src="./city icons/Hyderabad.png" alt="Hyderabad" class="country_img_width">
+            <div class="city_name">Hyderabad</div>
         </div> 
      </div> 
   
@@ -2304,25 +2312,32 @@ Fashion is the expression of self and freedom within a particular time, place, a
          
 <div style="display: flex; gap: 12px;" class=" overflow_scroll">
         <div class="flex_none">
-            <img src="https://voilastudio.in/International/USA.webp" alt="Ludhiana" class="country_img_width">
+            <img src="https://voilastudio.in/International/USA.webp" alt="USA" class="country_img_width">
+            <div class="city_name">USA</div>
         </div>
         <div class="flex_none">
-            <img src="https://voilastudio.in//International/UK.webp" alt="Ludhiana" class="country_img_width">
-
+            <img src="https://voilastudio.in//International/UK.webp" alt="UK" class="country_img_width">
+            <div class="city_name">UK</div>
         </div>
         <div class="flex_none">
-            <img src="https://voilastudio.in//International/Vietnam.webp" alt="Ludhiana" class="country_img_width">
+            <img src="https://voilastudio.in//International/Vietnam.webp" alt="Vietnam" class="country_img_width">
+            <div class="city_name">Vietnam</div>
         </div>
         <div class="flex_none">
-            <img src="https://voilastudio.in/International/Bangladesh.webp" alt="Ludhiana" class="country_img_width">
+            <img src="https://voilastudio.in/International/Bangladesh.webp" alt="Bangladesh" class="country_img_width">
+            <div class="city_name">Bangladesh</div>
         </div>    <div class="flex_none">
-            <img src="https://voilastudio.in/International/Germany.webp" alt="Ludhiana" class="country_img_width">
+            <img src="https://voilastudio.in/International/Germany.webp" alt="Germany" class="country_img_width">
+            <div class="city_name">Germany</div>
         </div>    <div class="flex_none">
-            <img src="https://voilastudio.in/International/Kenya.webp" alt="Ludhiana" class="country_img_width">
+            <img src="https://voilastudio.in/International/Kenya.webp" alt="Kenya" class="country_img_width">
+            <div class="city_name">Kenya</div>
         </div>    <div class="flex_none">
-            <img src="https://voilastudio.in/International/China.webp" alt="Ludhiana" class="country_img_width">
+            <img src="https://voilastudio.in/International/China.webp" alt="China" class="country_img_width">
+            <div class="city_name">China</div>
         </div>    <div class="flex_none">
-            <img src="https://voilastudio.in/International/Canada.webp" alt="Ludhiana" class="country_img_width">
+            <img src="https://voilastudio.in/International/Canada.webp" alt="Canada" class="country_img_width">
+            <div class="city_name">Canada</div>
         </div>   
     </div>
 <script>
