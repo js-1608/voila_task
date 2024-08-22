@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Announcement Bar</title>
+    <link rel="stylesheet" href="styles.css">
+	<style>
+
+
+.announcement-bar {
+    position: relative;
+    width: 100%;
+    
+    background-color: #333;
+    color: white;
+    // padding: 15px;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.announcement-container {
+    position: relative;
+    height: 30px;
+}
+
+.announcement-text {
+    position: absolute;
+    width: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    text-align: center;
+    font-size: 18px;
+}
+
+.announcement-text.active {
+    opacity: 1;
+}
+
+.prev-btn, .next-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    font-size: 18px;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    outline: none;
+}
+
+.prev-btn {
+    left: 10px;
+}
+
+.next-btn {
+    right: 10px;
+}
+
+.prev-btn:hover, .next-btn:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+	</style>
+</head>
+<body>
+    <div class="announcement-bar">
+        <div class="announcement-container">
+            <div id="announcement-text" class="announcement-text">Announcement 1: Welcome to our website!</div>
+            <div class="announcement-text">Announcement 2: Check out our latest updates.</div>
+            <div class="announcement-text">Announcement 3: Don't miss our special offers.</div>
+            <div class="announcement-text">Announcement 4: Join our newsletter for more info.</div>
+        </div>
+        <button class="prev-btn" onclick="prevAnnouncement()">&#10094;</button>
+        <button class="next-btn" onclick="nextAnnouncement()">&#10095;</button>
+    </div>
+
+    <script>
+	let currentIndex = 0;
+const announcements = document.querySelectorAll('.announcement-text');
+const totalAnnouncements = announcements.length;
+
+function showAnnouncement(index) {
+    if (index >= totalAnnouncements) {
+        currentIndex = 0;
+    } else if (index < 0) {
+        currentIndex = totalAnnouncements - 1;
+    } else {
+        currentIndex = index;
+    }
+
+    announcements.forEach((announcement, i) => {
+        announcement.classList.remove('active');
+        if (i === currentIndex) {
+            announcement.classList.add('active');
+        }
+    });
+}
+
+function nextAnnouncement() {
+    showAnnouncement(currentIndex + 1);
+}
+
+function prevAnnouncement() {
+    showAnnouncement(currentIndex - 1);
+}
+
+function autoSlide() {
+    nextAnnouncement();
+    setTimeout(autoSlide, 3000); // Change text every 4 seconds
+}
+
+// Start automatic sliding
+setTimeout(autoSlide, 3000);
+
+// Show the first announcement
+showAnnouncement(currentIndex);
+</script>
+</body>
+</html>
