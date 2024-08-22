@@ -14,7 +14,7 @@
     
     background-color: #333;
     color: white;
-    // padding: 15px;
+    /* // padding: 15px; */
     border-radius: 5px;
     overflow: hidden;
 }
@@ -70,8 +70,6 @@
         <div class="announcement-container">
             <div id="announcement-text" class="announcement-text">Announcement 1: Welcome to our website!</div>
             <div class="announcement-text">Announcement 2: Check out our latest updates.</div>
-            <div class="announcement-text">Announcement 3: Don't miss our special offers.</div>
-            <div class="announcement-text">Announcement 4: Join our newsletter for more info.</div>
         </div>
         <button class="prev-btn" onclick="prevAnnouncement()">&#10094;</button>
         <button class="next-btn" onclick="nextAnnouncement()">&#10095;</button>
@@ -109,7 +107,7 @@ function prevAnnouncement() {
 
 function autoSlide() {
     nextAnnouncement();
-    setTimeout(autoSlide, 3000); // Change text every 4 seconds
+    setTimeout(autoSlide, 3000); 
 }
 
 // Start automatic sliding
