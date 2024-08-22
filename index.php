@@ -194,6 +194,35 @@ include('db_config/db_config.php');
         padding:0px;
         margin:0px;
     }
+
+    .overflow_scroll {
+            overflow-x: scroll;
+            -ms-overflow-style: none;  /* IE and Edge */
+            scrollbar-width: none;   /* Firefox */
+        }
+        .country_img_width{
+width: 80%;
+        }   
+        @media (max-width: 768px) {
+            .frame {
+           flex-shrink: 0 !important;
+            width: 120px !important;
+      
+        }
+        .flex_none{
+            flex:none;
+            min-width: 10%;
+        box-sizing: border-box;
+        text-align: center;
+        padding: 10px;
+        
+        }
+        .country_img_width{
+            width: 100px;
+
+        }
+    }
+      
 </style>
 
 </head>
@@ -1425,6 +1454,7 @@ Fashion is the expression of self and freedom within a particular time, place, a
       <div class="marquee-block">
           <div class="marquee-inner to-left">
               <span>
+             
                 <div class="marquee-item">
                       <img loading="lazy" class="marquee_images" src="./best_In_Images/logos/1.webp" alt="Client with Voila Studio">
                 </div>
@@ -1438,7 +1468,11 @@ Fashion is the expression of self and freedom within a particular time, place, a
                       <img loading="lazy" class="marquee_images" src="./best_In_Images/logos/5.webp" alt="Client with Voila Studio">
                   </div><div class="marquee-item">
                       <img loading="lazy" class="marquee_images" src="./best_In_Images/logos/6.webp" alt="Client with Voila Studio">
-                  </div><div class="marquee-item">
+                  </div>
+                  <div class="marquee-item">
+                      <img loading="lazy" class="marquee_images" src="./best_In_Images/logos/Sansuilogo.webp" alt="Client with Voila Studio">
+                  </div>
+                  <div class="marquee-item">
                       <img loading="lazy" class="marquee_images" src="./best_In_Images/logos/7.webp" alt="Client with Voila Studio">
                   </div><div class="marquee-item">
                       <img loading="lazy" class="marquee_images" src="./best_In_Images/logos/8.webp" alt="Client with Voila Studio">
@@ -1471,6 +1505,7 @@ Fashion is the expression of self and freedom within a particular time, place, a
                   </div><div class="marquee-item">
                       <img loading="lazy" class="marquee_images" src="./best_In_Images/logos/22.webp" alt="Client with Voila Studio">
                   </div>
+                 
 
               <!-- old logos -->
                   <div class="marquee-item">
@@ -2076,6 +2111,9 @@ Fashion is the expression of self and freedom within a particular time, place, a
             min-width: 25%;
         }
     }
+
+    
+      
     </style>
 <!-- <div  style="width:22px">
     <img class="sidebar_line_extra shape"  id="shape" src="./mega_menu/img/indexpagebanner/select_category_sideLine.png" 
@@ -2200,175 +2238,37 @@ Fashion is the expression of self and freedom within a particular time, place, a
                         <h5><strong>National: </strong></h5>
             <p class="monstor">Faridabad | Ghaziabad | Ambala | Amritsar | Chandigarh | Punjab | Kanpur | Hyderabad | Agra | Nagpur | Gwalior | Bhopal | Lucknow | Jalpaiguri | Cuttack | Gorakhpur | Aligarh | Kota| Purnia | Jabalpur | Bareilly | Maharashtra | Pune | Vadodara | Rajkot | Bharuch | Ankleshwar | Gandhidham | Bhavnagar | Jamnagar | Vapi| Kolkata | West Bengal | Durgapur | Haldia | Chennai | Tamil Nadu | Coimbatore | Madurai | Tiruchirappalli | Salem | Tirupur | Bengaluru | Karnataka | Mangaluru | Mysuru | Hubli-Dharwad | Belagavi | New Delhi | Haryana | Panipat | Sonipat | Panchkula | Varanasi | Meerut | Moradabad | Allahabad | Jalandhar | Patiala | Mohali | Indore | Raipur | Bhilai | Bhubaneswar | Rourkela | Paradeep | Telangana | Warangal | Vishakhapatnam | Vijayawada | Guntur | Rajahmundry | Nellore | Tirupati | Patna | Muzaffarpur | Gaya | Ranchi | Jamshedpur | Bokaro | Dhanbad | Dehradun | Haridwar | Rudrapur | Rajasthan | Jodhpur | Udaipur | Bhiwadi | Alwar | Bikaner | Guwahati | Assam | Imphal | Manipur  | Shillong | Meghalaya.  
 </p></span>
-    <div class="carousel-container">
 
-        <div class="carousel-slide">
-            <div class="city_icon">
-                <img src="./city icons/Ludhiana.jpg" alt="Ludhiana">
-                <div class="city_name">Ludhiana</div>
-            </div>
-            <div class="city_icon">
-                <img src="./city icons/Mumbai.jpg" alt="Mumbai">
-                <div class="city_name">Mumbai</div>
-            </div>
-            <div class="city_icon">
-                <img src="./city icons/Noida.jpg" alt="Noida">
-                <div class="city_name">Noida</div>
-            </div>
-            <div class="city_icon">
-                <img src="./city icons/Agra.jpg" alt="Agra">
-                <div class="city_name">Agra</div>
-            </div>
-            <div class="city_icon">
-                <img src="./city icons/Ahmdedabad.jpg" alt="Ahmedabad">
-                <div class="city_name">Ahmedabad</div>
-            </div>
-            <div class="city_icon">
-                <img src="./city icons/Bangalore.jpg" alt="Bangalore">
-                <div class="city_name">Bangalore</div>
-            </div>
-            <div class="city_icon">
-                <img src="./city icons/Chennai.jpg" alt="Chennai">
-                <div class="city_name">Chennai</div>
-            </div>
-            <div class="city_icon">
-                <img src="./city icons/Delhi.jpg" alt="Delhi">
-                <div class="city_name">Delhi</div>
-            </div>
-            <div class="city_icon">
-                <img src="./city icons/Gurgaon.jpg" alt="Gurgaon">
-                <div class="city_name">Gurgaon</div>
-            </div>
-            <div class="city_icon">
-                <img src="./city icons/Hyderabad.png" alt="Hyderabad">
-                <div class="city_name">Hyderabad</div>
-            </div>
-            <div class="city_icon">
-                <img src="./city icons/Jaipur.jpg" alt="Jaipur">
-                <div class="city_name">Jaipur</div>
-            </div>
-            <div class="city_icon">
-                <img src="./city icons/Kolkata.jpg" alt="Kolkata">
-                <div class="city_name">Kolkata</div>
-            </div>
-            <div class="city_icon">
-                <img src="./city icons/Ludhiana.jpg" alt="Ludhiana">
-                <div class="city_name">Ludhiana</div>
-            </div>
-            <div class="city_icon">
-                <img src="./city icons/Mumbai.jpg" alt="Mumbai">
-                <div class="city_name">Mumbai</div>
-            </div>
-           
-            <div class="city_icon">
-                <img src="./city icons/Noida.jpg" alt="Noida">
-                <div class="city_name">Noida</div>
-            </div>
-            <div class="city_icon">
-                <img src="./city icons/Agra.jpg" alt="Agra">
-                <div class="city_name">Agra</div>
-            </div>
-            <div class="city_icon">
-                <img src="./city icons/Ahmdedabad.jpg" alt="Ahmedabad">
-                <div class="city_name">Ahmedabad</div>
-            </div>
-            <div class="city_icon">
-                <img src="./city icons/Bangalore.jpg" alt="Bangalore">
-                <div class="city_name">Bangalore</div>
-            </div>
-            <div class="city_icon">
-                <img src="./city icons/Chennai.jpg" alt="Chennai">
-                <div class="city_name">Chennai</div>
-            </div>
-            <div class="city_icon">
-                <img src="./city icons/Delhi.jpg" alt="Delhi">
-                <div class="city_name">Delhi</div>
-            </div>
-            <div class="city_icon">
-                <img src="./city icons/Gurgaon.jpg" alt="Gurgaon">
-                <div class="city_name">Gurgaon</div>
-            </div>
-            <div class="city_icon">
-                <img src="./city icons/Hyderabad.png" alt="Hyderabad">
-                <div class="city_name">Hyderabad</div>
-            </div>
-            <div class="city_icon">
-                <img src="./city icons/Jaipur.jpg" alt="Jaipur">
-                <div class="city_name">Jaipur</div>
-            </div>
-            <div class="city_icon">
-                <img src="./city icons/Kolkata.jpg" alt="Kolkata">
-                <div class="city_name">Kolkata</div>
-            </div>
-            <div class="city_icon">
-                <img src="./city icons/Ludhiana.jpg" alt="Ludhiana">
-                <div class="city_name">Ludhiana</div>
-            </div>
-            <div class="city_icon">
-                <img src="./city icons/Mumbai.jpg" alt="Mumbai">
-                <div class="city_name">Mumbai</div>
-            </div>
-            <div class="city_icon">
-                <img src="./city icons/Agra.jpg" alt="Agra">
-                <div class="city_name">Agra</div>
-            </div>
-            <div class="city_icon">
-                <img src="./city icons/Ahmdedabad.jpg" alt="Ahmedabad">
-                <div class="city_name">Ahmedabad</div>
-            </div>
-            <div class="city_icon">
-                <img src="./city icons/Bangalore.jpg" alt="Bangalore">
-                <div class="city_name">Bangalore</div>
-            </div>
-            <div class="city_icon">
-                <img src="./city icons/Chennai.jpg" alt="Chennai">
-                <div class="city_name">Chennai</div>
-            </div>
-            <div class="city_icon">
-                <img src="./city icons/Delhi.jpg" alt="Delhi">
-                <div class="city_name">Delhi</div>
-            </div>
-            <div class="city_icon">
-                <img src="./city icons/Gurgaon.jpg" alt="Gurgaon">
-                <div class="city_name">Gurgaon</div>
-            </div>
-            <div class="city_icon">
-                <img src="./city icons/Hyderabad.png" alt="Hyderabad">
-                <div class="city_name">Hyderabad</div>
-            </div>
-            <div class="city_icon">
-                <img src="./city icons/Jaipur.jpg" alt="Jaipur">
-                <div class="city_name">Jaipur</div>
-            </div>
-            <div class="city_icon">
-                <img src="./city icons/Kolkata.jpg" alt="Kolkata">
-                <div class="city_name">Kolkata</div>
-            </div>
-            <div class="city_icon">
-                <img src="./city icons/Ludhiana.jpg" alt="Ludhiana">
-                <div class="city_name">Ludhiana</div>
-            </div>
-            <div class="city_icon">
-                <img src="./city icons/Mumbai.jpg" alt="Mumbai">
-                <div class="city_name">Mumbai</div>
-            </div>
-            <div class="city_icon">
-                <img src="./city icons/Ludhiana.jpg" alt="Ludhiana">
-                <div class="city_name">Ludhiana</div>
-            </div>
-            <div class="city_icon">
-                <img src="./city icons/Mumbai.jpg" alt="Mumbai">
-                <div class="city_name">Mumbai</div>
-            </div>
-            <div class="city_icon">
-                <img src="./city icons/Noida.jpg" alt="Noida">
-                <div class="city_name">Noida</div>
-            </div>
-           
+    <div style="display: flex; gap: 12px;" class=" overflow_scroll">
+        <div class="flex_none">
+            <img src="./city icons/Ludhiana.jpg" alt="Ludhiana" class="country_img_width">
         </div>
-        <!-- <button class="carousel-button prev">❮</button>
-        <button class="carousel-button next">❯</button> -->
-    </div>
+        <div class="flex_none">
+            <img src="./city icons/Mumbai.jpg" alt="Ludhiana" class="country_img_width">
+
+        </div>
+        <div class="flex_none">
+            <img src="./city icons/Noida.jpg" alt="Ludhiana" class="country_img_width">
+        </div>
+        <div class="flex_none">
+            <img src="./city icons/Agra.jpg" alt="Ludhiana" class="country_img_width">
+        </div> 
+           <div class="flex_none">
+            <img src="./city icons/Bangalore.jpg" alt="Ludhiana" class="country_img_width">
+        </div>   
+         <div class="flex_none">
+            <img src="./city icons/Chennai.jpg" alt="Ludhiana" class="country_img_width">
+        </div>    
+        <div class="flex_none">
+            <img src="./city icons/Delhi.jpg" alt="Ludhiana" class="country_img_width">
+        </div> 
+           <div class="flex_none">
+            <img src="./city icons/Gurgaon.jpg" alt="Ludhiana" class="country_img_width">
+        </div>    
+          <div class="flex_none">
+            <img src="./city icons/Hyderabad.png" alt="Ludhiana" class="country_img_width">
+        </div> 
+     </div> 
   
 
             <br>
@@ -2376,44 +2276,10 @@ Fashion is the expression of self and freedom within a particular time, place, a
             <h5><strong>International: </strong></h5></span>
          <p class="monstor">
          China | USA | Vietnam | Germany | Canada | UK | Bangladesh | Kenya</p>     
-    <div class="carousel-container">
+    <!-- <div class="carousel-container"> -->
 
-        <div class="carousel-slide">
-            <div class="city_icon">
-                <img src="./International/USA.webp" alt="Ludhiana" style="width:70%">
-                <div class="city_name">USA</div>
-            </div>
-            <div class="city_icon" >
-                <img src="./International/UK.webp" alt="Mumbai" style="width:70%">
-                <div class="city_name">UK</div>
-            </div>
-            <div class="city_icon">
-                <img src="./International/Vietnam.webp" alt="Noida"  style="width:70%">
-                <div class="city_name">Vietnam</div>
-            </div>
-            <div class="city_icon">
-                <img src="./International/Bangladesh.webp" alt="Agra"  style="width:70%">
-                <div class="city_name">Bangladesh</div>
-            </div>
-            <div class="city_icon">
-                <img src="./International/Germany.webp" alt="Ahmedabad"  style="width:70%">
-                <div class="city_name">Germany</div>
-            </div>
-            <div class="city_icon">
-                <img src="./International/Kenya.webp" alt="Ahmedabad"  style="width:70%">
-                <div class="city_name">Kenya</div>
-            </div>
-            <div class="city_icon">
-                <img src="./International/China.webp" alt="Bangalore"  style="width:70%">
-                <div class="city_name">China</div>
-            </div>
-            <div class="city_icon">
-                <img src="./International/Canada.webp" alt="Chennai"  style="width:70% !important">
-                <div class="city_name">Canada</div>
-            </div>
-        
-        </div>
-    </div>
+  
+    <!-- </div> -->
 
 <!-- 
 <div>
@@ -2435,7 +2301,30 @@ Fashion is the expression of self and freedom within a particular time, place, a
         </div>
     </div>
 </div> -->
-    
+         
+<div style="display: flex; gap: 12px;" class=" overflow_scroll">
+        <div class="flex_none">
+            <img src="https://voilastudio.in/International/USA.webp" alt="Ludhiana" class="country_img_width">
+        </div>
+        <div class="flex_none">
+            <img src="https://voilastudio.in//International/UK.webp" alt="Ludhiana" class="country_img_width">
+
+        </div>
+        <div class="flex_none">
+            <img src="https://voilastudio.in//International/Vietnam.webp" alt="Ludhiana" class="country_img_width">
+        </div>
+        <div class="flex_none">
+            <img src="https://voilastudio.in/International/Bangladesh.webp" alt="Ludhiana" class="country_img_width">
+        </div>    <div class="flex_none">
+            <img src="https://voilastudio.in/International/Germany.webp" alt="Ludhiana" class="country_img_width">
+        </div>    <div class="flex_none">
+            <img src="https://voilastudio.in/International/Kenya.webp" alt="Ludhiana" class="country_img_width">
+        </div>    <div class="flex_none">
+            <img src="https://voilastudio.in/International/China.webp" alt="Ludhiana" class="country_img_width">
+        </div>    <div class="flex_none">
+            <img src="https://voilastudio.in/International/Canada.webp" alt="Ludhiana" class="country_img_width">
+        </div>   
+    </div>
 <script>
         const slide = document.querySelector('.carousel-slide');
         const images = document.querySelectorAll('.carousel-slide .city_icon');
