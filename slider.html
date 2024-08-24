@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Responsive Slider</title>
+  <link rel="stylesheet" href="styles.css">
+  
+  <style>
+    /* Basic styling for slider */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  
+  height: 100vh;
+  background-color: #f0f0f0;
+}
+
+.slider-container {
+  position: relative;
+  width: 78%;
+  max-width: 1200px;
+  overflow: hidden;
+  margin: auto;
+}
+
+.slider-wrapper {
+  width: 100%;
+  overflow: hidden;
+}
+
+.slider {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.slide {
+  min-width: 25%; /* 4 slides per view on desktop */
+  box-sizing: border-box;
+  padding: 20px;
+  text-align: center;
+  background-color: #fff;
+  margin: 5px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.slider-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 10;
+  border-radius: 50%;
+  padding-left: 16px;
+    padding-right: 16px;
+}
+
+.left-arrow {
+  left: 10px;
+}
+
+.right-arrow {
+  right: 10px;
+}
+
+.dots-container {
+  text-align: center;
+  margin-top: 15px;
+}
+
+.dot {
+  height: 10px;
+  width: 10px;
+  margin: 0 5px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.dot.active {
+  background-color: #717171;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .slide {
+    min-width: 100%; /* 1 slide per view on mobile */
+  }
+
+  .slider-arrow {
+    display: none; /* Hide arrows on mobile */
+  }
+}
+
+  </style>
+
+</head>
+<body>
+  <div class="slider-container">
+    <div class="slider-wrapper">
+      <div class="slider">
+        <div class="slide">Item 1</div>
+        <div class="slide">Item 2</div>
+        <div class="slide">Item 3</div>
+        <div class="slide">Item 4</div>
+        <div class="slide">Item 5</div>
+        <div class="slide">Item 6</div>
+        <div class="slide">Item 7</div>
+        <div class="slide">Item 8</div>
+      </div>
+    </div>
+    <button class="slider-arrow left-arrow">&#10094;</button>
+    <button class="slider-arrow right-arrow">&#10095;</button>
+  </div>
+  <div class="dots-container"></div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const slides = document.querySelectorAll('.slide');
+      const slider = document.querySelector('.slider');
+      const dotsContainer = document.querySelector('.dots-container');
+      const leftArrow = document.querySelector('.left-arrow');
+      const rightArrow = document.querySelector('.right-arrow');
+      
+      let currentIndex = 0;
+      let slideInterval;
+      let slideWidth = slides[0].clientWidth;
+
+      // Create dots
+      slides.forEach((_, index) => {
+        const dot = document.createElement('span');
+        dot.classList.add('dot');
+        if (index === 0) dot.classList.add('active');
+        dot.setAttribute('data-index', index);
+        dotsContainer.appendChild(dot);
+      });
+
+      const dots = document.querySelectorAll('.dot');
+
+      function updateSliderPosition() {
+        slider.style.transform = `translateX(${-slideWidth * currentIndex}px)`;
+        dots.forEach(dot => dot.classList.remove('active'));
+        dots[currentIndex].classList.add('active');
+      }
+
+      function nextSlide() {
+        currentIndex = (currentIndex + 1) % slides.length;
+        updateSliderPosition();
+      }
+
+      function previousSlide() {
+        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+        updateSliderPosition();
+      }
+
+      rightArrow.addEventListener('click', nextSlide);
+      leftArrow.addEventListener('click', previousSlide);
+
+      dots.forEach(dot => {
+        dot.addEventListener('click', function() {
+          currentIndex = parseInt(this.getAttribute('data-index'));
+          updateSliderPosition();
+        });
+      });
+
+      function startAutoSlide() {
+        slideInterval = setInterval(nextSlide, 3000);
+      }
+
+      function stopAutoSlide() {
+        clearInterval(slideInterval);
+      }
+
+      slider.addEventListener('mouseenter', stopAutoSlide);
+      slider.addEventListener('mouseleave', startAutoSlide);
+
+      window.addEventListener('resize', () => {
+        slideWidth = slides[0].clientWidth;
+        updateSliderPosition();
+      });
+
+      startAutoSlide();
+    });
+  </script>
+</body>
+</html>
