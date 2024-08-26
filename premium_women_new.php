@@ -13,8 +13,8 @@ require_once("analytics.php");
 // include("menu_test.php");
 
 include('db_config/base_url.php');
-include('db_config/db_config.php');
-
+//include('db_config/db_config.php');
+include('./old_website_assets/voilastudio_admin/lib/config.php');
 if(isset($_REQUEST['form_name'])){
 	
 	$name = $_REQUEST['form_name'];
@@ -640,6 +640,15 @@ border-radius: 5px;
         -webkit-text-stroke-width: .5px;
         box-shadow: -1.35px 1px 5.6px 2px #00000073;
     }
+    @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap');
+    .monstor{
+
+  font-family: "Montserrat", sans-serif !important;
+  font-optical-sizing: auto;
+  font-weight: 300 !important;
+  font-style: normal;
+
+    }
 </style>
     </head>
     <?php include("menu_test.php"); ?>
@@ -868,23 +877,24 @@ border-radius: 5px;
 
                 <div class="row" id="row3">
                     <div class="col_6"><div class="px_12" style="position:relative;">
-                        <img src="/assets/premium_images_folder/FEMALE%20CUSTOM/1.JPG" class="premium_img" loading="lazy" alt="premiumimg">
+                
+                        <img src="./Premium%20Page%20DATA/women_outdoor/1.webp" class="premium_img" loading="lazy" alt="premiumimg">
                     <p class="referenceImg_tag" style=" width:42%; font-size:11px;   bottom:12px;">Reference .Img</p></div>
                     </div>
                     <div class="col_6"><div class="px_12" style="position:relative;">
-                        <img src="/assets/premium_images_folder/FEMALE%20CUSTOM/2.JPG" class="premium_img" loading="lazy" alt="premiumimg">
+                        <img src="./Premium%20Page%20DATA/women_outdoor/2.webp" class="premium_img" loading="lazy" alt="premiumimg">
                     <p class="referenceImg_tag" style=" width:42%; font-size:11px;   bottom:12px;">Reference .Img</p></div>
                     </div>
                     <div class="col_6"><div class="px_12" style="position:relative;">
-                        <img src="/assets/premium_images_folder/FEMALE%20CUSTOM/4.JPG" class="premium_img" loading="lazy" alt="premiumimg">
+                        <img src="./Premium%20Page%20DATA/women_outdoor/3.webp" class="premium_img" loading="lazy" alt="premiumimg">
                     <p class="referenceImg_tag" style=" width:42%; font-size:11px;   bottom:12px;">Reference .Img</p></div>
                     </div>
                     <div class="col_6"><div class="px_12" style="position:relative;">
-                        <img src="/assets/premium_images_folder/FEMALE%20CUSTOM/6.JPG" class="premium_img" loading="lazy" alt="premiumimg">
+                        <img src="./Premium%20Page%20DATA/women_outdoor/4.webp" class="premium_img" loading="lazy" alt="premiumimg">
                     <p class="referenceImg_tag" style=" width:42%; font-size:11px;   bottom:12px;">Reference .Img</p></div>
                     </div>
                     <div class="col_6"><div class="px_12" style="position:relative;">
-                        <img src="/assets/premium_images_folder/FEMALE CUSTOM/7.JPG" class="premium_img" loading="lazy" alt="premiumimg">
+                        <img src="./Premium%20Page%20DATA/women_outdoor/5.webp" class="premium_img" loading="lazy" alt="premiumimg">
                     <p class="referenceImg_tag" style=" width:42%; font-size:11px;   bottom:12px;">Reference .Img</p></div>
                     </div>
                 </div>
@@ -926,14 +936,14 @@ border-radius: 5px;
                     <div class="">
                         <div class="d-flex px_12 gap_12 pt_30 overflow_scroll">
                             <div class="text_center frame" style=" font-size:11px" id="showRow1">
-                                <img class="click_img" src="./voila_assets/icon/1.jpg" class="detailed_model_detailedshot_extra" style=" margin-bottom:10px" loading="lazy" alt="" >Color Back Drop
+                                <img class="click_img" src="./Premium%20Page%20DATA/ICONS/women/1.jpg" class="detailed_model_detailedshot_extra" style=" margin-bottom:10px" loading="lazy" alt="" >Color Back Drop
                                
                             </div>
                             <div class="text_center frame" style=" font-size:11px" id="showRow2">
-                                <img class="click_img" src="./voila_assets/icon/2.jpg" class="detailed_model_detailedshot_extra" style=" margin-bottom:10px" loading="lazy" alt="" > Creative / Custom
+                                <img class="click_img" src="./Premium%20Page%20DATA/ICONS/women/2.jpg" class="detailed_model_detailedshot_extra" style=" margin-bottom:10px" loading="lazy" alt="" > Creative / Custom
                             </div>
                             <div class="text_center frame" style=" font-size:11px" id="showRow3">
-                                <img class="click_img" src="./voila_assets/icon/4.jpg" loading="lazy" style=" margin-bottom:10px" alt="" >Outdoor
+                                <img class="click_img" src="./Premium%20Page%20DATA/ICONS/women/4.jpg" loading="lazy" style=" margin-bottom:10px" alt="" >Outdoor
                             </div>
                             <!-- <div class="text_center frame">
                                 <img class="click_img" src="./premium/premium (2).png" loading="lazy" alt="" id="showRow4">Custom Shoot
@@ -963,8 +973,8 @@ border-radius: 5px;
               
                    
                 <div class="discription px_12">
-                    <p class="discription_text px_12" style="padding-bottom:4px;">Description: </p>
-                    <p class="discription_text2" id="descriptionText" style="padding-left: 12px;"></p>
+                    <!-- <p class="discription_text px_12" style="padding-bottom:4px;">Description: </p> -->
+                    <p class="discription_text2 monstor" id="descriptionText" style="padding-left: 12px;"></p>
                 </div>
                 <button class="button_book_now_2" onclick="handleButtonClick2()" style="border:none; width:50% !important; margin:auto">
                     <a class="booknowtag_2" href="#" style="color:white !important; margin:auto">
@@ -1285,14 +1295,14 @@ function UserDeliveredDateclosey() {
         <span class="clode_2" onclick="clode_2Form()">&times;</span>
         <h2 style="font-size:20px">Contact Us</h2>
         <form class="form" method = "post" action = "<?php echo $_SERVER['PHP_SELF']; ?>" id="booking_query_form" >
-            <label for="name" class="label">Name:</label>
+            <label for="name" class="label">Name <span style="color:red">*</span>:</label>
             <input type="text" id="form_name" name="form_name" required class="input"><br>
-            <label for="phone" class="label">Phone:</label>
+            <label for="phone" class="label">Phone <span style="color:red">*</span>:</label>
             <input type="text" id="form_mobile" name="form_mobile" required class="input"><br>
-            <label for="email" class="label">Email:</label>
+            <label for="email" class="label">Email <span style="color:red">*</span>:</label>
             <input type="email" id="form_email" name="form_email" required class="input"><br>
             <label for="message" class="label">Message:</label>
-            <textarea id="form_message" name="form_message" required class="textarea2 input" style="padding: 10px !important;
+            <textarea id="form_message" name="form_message"  class="textarea2 input" style="padding: 10px !important;
             border: 1px solid #ccc !important;
             border-radius: 5px;
             font-size: 16px;"></textarea><br>
@@ -1734,9 +1744,9 @@ function closeBothSignin() {
     const rows = ['row1', 'row2', 'row3'];
     const imgs = ['showRow1', 'showRow2', 'showRow3'];
     const descriptions = [
-        " Enhance your eCommerce visuals with VOILA Studio's premium shoots!Choose the perfect backdrop:  1. Solid Color Backdrops: Select from various colors to match your brand’s aesthetic. 2. Fabric Backdrops: Opt for fabric textures that align with your brand’s look.  3. Printed Backdrops: Pick from diverse printed designs to enhance your product presentation.  Our expert team will turn your vision into reality, making your products shine. Customize your shoot with your choice of color, fabric, or printed backdrops—or suggest something unique. Let’s create something extraordinary together!",
-        "Enhance your eCommerce visuals with VOILA Studio's creative/custom female shoots! 1. Tailored Options: Choose from dimensions up to 2000 x 2000 pixels at 300 dpi.   2. Creative Elements: Incorporate props like flowers or other unique items.  or let us know your specific vision. Our expert team is here to bring your ideas to life and craft shoots that meet your exact needs. Let's make your creative dreams come true!",
-        "Enhance your eCommerce visuals with VOILA Studio's premium female outdoor shoots!  1. Tailored Outdoor Options: Select from a range of customized outdoor shoot options 2. Nature-Inspired Creativity: Let us capture your vision with the beauty of nature.   or share your creative vision with us. Our expert team is dedicated to bringing your ideas to life and crafting shoots that perfectly meet your needs. Let's make your creative dreams come true!",
+        "Enhance your eCommerce visuals with VOILA Studio's premium shoots! Choose from a variety of color backdrops using our swatch options to perfectly match your brand's aesthetic. Our expert team will bring your vision to life, ensuring your products stand out. Customize your shoot with the colors you need, and we'll deliver stunning, tailored results. Let's create something extraordinary together!",
+        "Enhance your eCommerce visuals with VOILA Studio's creative/custom shoots! Choose from a range of tailored options up to 2000 x 2000 dimensions at 300 dpi, or let us know your specific vision. Our expert team is here to bring your ideas to life and craft shoots that meet your exact needs. Let's make your creative dreams come true!",
+        "Enhance your eCommerce visuals with VOILA Studio's premium shoots! Choose from a variety of tailored Outdoor shoot options or share your creative vision with us. Our expert team is dedicated to bringing your ideas to life and crafting shoots that perfectly meet your needs. Let's make your creative dreams come true!",
     ];
 
     function showRow(index) {
@@ -1939,7 +1949,7 @@ $(document).ready(function() {
 
 </tail>
 
-<div>
+<!-- <div>
     <div class="contact-us-container">
         <div class="contact-icon main-icon" onclick="toggleContacts()">
             <img src="<?php echo BASE_URL; ?>/assets/img/contact.png" alt="Contact Us">
@@ -1954,7 +1964,7 @@ $(document).ready(function() {
             <a href="/"><img src="<?php echo BASE_URL; ?>/assets/img/Chat.png" alt="Phone"></a>
         </div>
     </div>
-</div>
+</div> -->
 
 <script src="./assets/js/more.js"></script>
 <script>

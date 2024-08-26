@@ -2082,8 +2082,9 @@ Fashion is the expression of self and freedom within a particular time, place, a
         box-sizing: border-box;
         text-align: center;
         padding: 10px;
+        text-align:center
     }
-    .city_icon img {
+    .city_icon {
         width: 100%;
         border: 1px solid rgb(182, 180, 180);
     }
@@ -2272,7 +2273,7 @@ Fashion is the expression of self and freedom within a particular time, place, a
             <img src="./city icons/Gurgaon.jpg" alt="Gurgaon" class="country_img_width">
             <div class="city_name">Gurgaon</div>
         </div>    
-          <div class="flex_none">
+          <div class="flex_none city_icon">
             <img src="./city icons/Hyderabad.png" alt="Hyderabad" class="country_img_width">
             <div class="city_name">Hyderabad</div>
         </div> 
