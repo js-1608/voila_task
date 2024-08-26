@@ -229,16 +229,21 @@ border-radius: 5px;
 }#row4{
   display: none ;
 }
-
+/* asdfghjklsdfghjklsdfghjklsdfghjksdfghjksdfghjkldfghjkdfghjklfghj00000000000000000000000000000000000000000 */
         .color_name_hover{
                 opacity: 0;
                 font-size:10px;
                 color:black;
+               margin-left: 12px;
+               
             
         }
-
+        .color_name_hover{
+            transition: all .3s linear;
+        }
         .name_toggle:hover .color_name_hover{
                 opacity: 1;
+              
         }
 
 
@@ -246,7 +251,7 @@ border-radius: 5px;
 
 
 
-
+/* 00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000 */
             .row {
                     width: 100%;
                     display: flex;
@@ -911,17 +916,47 @@ border-radius: 5px;
                         </div>
                     </div>
                     <div id="colorOptions">
+
+                       
                         <p style="padding-left:12px; padding-bottom:7px;">  Solid Color Backdrops Available</p>
                     <div style="display:flex; width:100%; padding-left:8px; padding-bottom:10px; width:100%">
                                   <div class="name_toggle">
                                   <div id="colorchange1" style=" cursor:pointer ;background-color:#EACB7B; height:30px; width:30px; margin-left:12px; border-radius:100%"></div>
-                                 <div class="color_name_hover">Yellow</div>
+        
+                                  <div class="color_name_hover">
+                                    yellow
+                                  </div>  
                                 </div>
+                               
+                                    <div class="name_toggle">
                                     <div id="colorchange2" style=" cursor:pointer ;background-color:#CEB2A9; height:30px; width:30px; margin-left:12px;  border-radius:100%"></div>
+                                    
+                                    <div class="color_name_hover">
+                                      yellow
+                                    </div>  
+                                    </div>
+                                    <div class="name_toggle">
                                     <div id="colorchange3" style=" cursor:pointer ;background-color:#969696; height:30px; width:30px; margin-left:12px;  border-radius:100%"></div>
+                                  
+                                    <div class="color_name_hover">
+                                      yellow
+                                    </div>  
+                             </div>
+                                    <div class="name_toggle">
                                     <div id="colorchange4" style=" cursor:pointer ;background-color:#A59EC6; height:30px; width:30px; margin-left:12px;  border-radius:100%"></div>
-                                    <div id="colorchange5" style=" cursor:pointer ;background-color:#CAAEA6; height:30px; width:30px; margin-left:12px;  border-radius:100%"></div>
-
+                                    
+                                    <div class="color_name_hover">
+                                      yellow
+                                    </div>  
+                                    </div>
+                                    <div class="name_toggle">
+                                     <div id="colorchange5" style=" cursor:pointer ;background-color:#CAAEA6; height:30px; width:30px; margin-left:12px;  border-radius:100%"></div>
+                                    <div class="color_name_hover">
+                                      yellow
+                                    </div>  
+                                  </div>
+                                  
+                                   
                  </div>
                  </div>
                     <div style="height: 1px; padding-left: 13px; background-color: #CCC4C4; max-width: 600px; margin-top: 10px;"></div>
@@ -1745,7 +1780,7 @@ function closeBothSignin() {
 <script>
        document.addEventListener('DOMContentLoaded', () => {
     const rows = ['color1', 'color2', 'color3','color4','color5'];
-    const imgs = ['colorchange1', 'colorchange2', 'colorchange3','colorchange4','colorchange5'];
+    const imgs = ['colorchange1', 'colorchange2', 'colorchange3','colorchange4','colorchange5',];
 
     function colorchange(index) {
         rows.forEach(row => {
