@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+  .review-section {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.review-section h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.reviews {
+    position: relative;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.review-container {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.review-box {
+    min-width: 300px;
+    margin: 0 10px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+.review-box p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.review-box h4 {
+    font-size: 1rem;
+    color: #888;
+}
+
+.nav-btn {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.5rem;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 100;
+}
+
+#prevBtn {
+    left: 0;
+}
+
+#nextBtn {
+    right: 0;
+}
+
+.nav-btn:hover {
+    background-color: #0056b3;
+}
+
+    </style>
+</head>
+<body>
+    <div class="review-section">
+        <h2>What Our Clients Say</h2>
+        <div class="reviews">
+            <button id="prevBtn" class="nav-btn">&lt;</button>
+            <div class="review-container">
+                <div class="review-box">
+                    <p>"The service was exceptional! Highly recommended."</p>
+                    <h4>- John Doe</h4>
+                </div>
+                <div class="review-box">
+                    <p>"Amazing experience, will definitely come back again!"</p>
+                    <h4>- Jane Smith</h4>
+                </div>
+                <div class="review-box">
+                    <p>"Great customer support and fast delivery."</p>
+                    <h4>- Alice Johnson</h4>
+                </div>
+                <div class="review-box">
+                    <p>"Affordable and high-quality products. A winning combo!"</p>
+                    <h4>- Michael Brown</h4>
+                </div>
+                <div class="review-box">
+                    <p>"Fast shipping and the products are top-notch."</p>
+                    <h4>- Sarah Wilson</h4>
+                </div>
+                <div class="review-box">
+                    <p>"Very satisfied with the service and product quality."</p>
+                    <h4>- David Lee</h4>
+                </div>
+            </div>
+            <button id="nextBtn" class="nav-btn">&gt;</button>
+        </div>
+    </div>
+    
+    <script>
+     const reviewContainer = document.querySelector('.review-container');
+const reviews = document.querySelectorAll('.review-box');
+const reviewWidth = reviews[0].clientWidth + 20; // Review width + margin
+let currentPosition = 0;
+
+function updatePosition() {
+    reviewContainer.style.transform = `translateX(${currentPosition}px)`;
+}
+
+document.getElementById('nextBtn').addEventListener('click', () => {
+    if (currentPosition > -(reviewWidth * (reviews.length - 3))) {
+        currentPosition -= reviewWidth;
+    } else {
+        currentPosition = 0; // Loop back to the start
+    }
+    updatePosition();
+});
+
+document.getElementById('prevBtn').addEventListener('click', () => {
+    if (currentPosition < 0) {
+        currentPosition += reviewWidth;
+    } else {
+        currentPosition = -(reviewWidth * (reviews.length - 3)); // Loop to the end
+    }
+    updatePosition();
+});
+
+    </script>
+</body>
+</html>
