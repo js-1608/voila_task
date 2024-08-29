@@ -1,193 +1,289 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-  .review-section {
-    max-width: 1200px;
-    margin: 0 auto;
-    text-align: center;
-    padding: 50px 20px;
-    background-color: #f9f9f9;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+      }
+      .review-section {
+        max-width: 1200px;
+        margin: 0 auto;
+        text-align: center;
+        padding: 50px 20px;
+        background-color: #f9f9f9;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      }
 
-.review-section h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    color: #333;
-}
+      .review-section h2 {
+        font-size: 2rem;
+        margin-bottom: 20px;
+        color: #333;
+      }
 
-.reviews {
-    position: relative;
-    display: flex;
-    align-items: center;
-    overflow: hidden;
-}
+      .reviews {
+        position: relative;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+      }
 
-.review-container {
-    display: flex;
-    transition: transform 0.5s ease-in-out;
-}
+      .review-container {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+      }
 
-.review-box {
-    min-width: 300px;
-    margin: 0 10px;
-    padding: 20px;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    text-align: left;
-}
+      .review-box {
+        min-width: 300px;
+        margin: 0 10px;
+        padding: 20px;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        text-align: left;
+      }
 
-.review-box p {
-    font-size: 1.2rem;
-    color: #555;
-    margin-bottom: 10px;
-}
+      .review-box p {
+        font-size: 1.2rem;
+        color: #555;
+        margin-bottom: 10px;
+      }
 
-.review-box h4 {
-    font-size: 1rem;
-    color: #888;
-}
+      .review-box h4 {
+        font-size: 1rem;
+        color: #888;
+      }
 
-.nav-btn {
-    background-color: #007BFF;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1.5rem;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index:100
-}
+      .nav-btn {
+     border: none;
+        color: white;
+        cursor: pointer;
+        font-size: 28px;
+        color: #8a51b5;
+        font-weight: 600;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        z-index: 100;
+        background-color: #fff;
+        border-radius: 50%;
+        padding:10px 17px;transition: all .3s linear;
+      }
 
-#prevBtn {
-    left: 0;
-}
+      #prevBtn {
+        left: 0;
+      }
 
-#nextBtn {
-    right: 0;
-}
+      #nextBtn {
+        right: 0;
+      }
 
-.nav-btn:hover {
-    background-color: #0056b3;
-}
+      .nav-btn:hover {  color: #fff;
+        background-color: #8a51b5;
+      }
 
-.dots {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-}
+      .dots {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+      }
 
-.dot {
-    height: 15px;
-    width: 15px;
-    margin: 0 5px;
-    background-color: #bbb;
-    border-radius: 50%;
-    display: inline-block;
-    cursor: pointer;
-}
+      .dot {
+        height: 15px;
+        width: 15px;
+        margin: 0 5px;
+        background-color: #bbb;
+        border-radius: 50%;
+        display: inline-block;
+        cursor: pointer;
+      }
 
-.dot.active {
-    background-color: #007BFF;
-}
-
+      .dot.active {
+        background-color: #007bff;
+      }
+      .review_text {
+        font-size: 17px !important;
+        margin-top: 40px !important;
+      }
+      .review_username {
+        font-size: 20px !important;
+        margin-bottom: 0 !important;
+      }
     </style>
-</head>
-<body>
+  </head>
+
+  <body>
     <div class="review-section">
-        <h2>What Our Clients Say</h2>
-        <div class="reviews">
-            <button id="prevBtn" class="nav-btn">&lt;</button>
-            <div class="review-container">
-                <div class="review-box">
-                    <p>"The service was exceptional! Highly recommended."</p>
-                    <h4>- John Doe</h4>
-                </div>
-                <div class="review-box">
-                    <p>"Amazing experience, will definitely come back again!"</p>
-                    <h4>- Jane Smith</h4>
-                </div>
-                <div class="review-box">
-                    <p>"Great customer support and fast delivery."</p>
-                    <h4>- Alice Johnson</h4>
-                </div>
-                <div class="review-box">
-                    <p>"Affordable and high-quality products. A winning combo!"</p>
-                    <h4>- Michael Brown</h4>
-                </div>
-                <div class="review-box">
-                    <p>"Fast shipping and the products are top-notch."</p>
-                    <h4>- Sarah Wilson</h4>
-                </div>
-                <div class="review-box">
-                    <p>"Very satisfied with the service and product quality."</p>
-                    <h4>- David Lee</h4>
-                </div>
+      <h2>What Our Clients Say</h2>
+      <div class="reviews">
+        <button id="prevBtn" class="nav-btn">&#x2C2;</button>
+        <div class="review-container">
+          <div class="review-box">
+            <div style="display: flex; align-items: center">
+              <span style="font-size: 19px">&#x2B50;</span>
+              <span style="font-size: 19px">&#x2B50;</span>
+              <span style="font-size: 19px">&#x2B50;</span>
+              <span style="font-size: 19px">&#x2B50;</span>
+              <span style="font-size: 19px">&#x2B50;</span>
+              <p style="margin: 4px 4px 0px">23 Aug 2024</p>
             </div>
-            <button id="nextBtn" class="nav-btn">&gt;</button>
+            <p class="review_text">
+              "I've worked with a few photographers in the past, but
+              VOILAStudio's service stands out. They perfectly captured the
+              intricate details of our jewelry, making our products look
+              stunning online. The turnaround was quick, and the results were
+              flawless!"
+            </p>
+            <h4 class="review_username">Ritesh Jain</h4>
+          </div>
+          <div class="review-box">
+            <div style="display: flex; align-items: center">
+              <span style="font-size: 19px">&#x2B50;</span>
+              <span style="font-size: 19px">&#x2B50;</span>
+              <span style="font-size: 19px">&#x2B50;</span>
+              <span style="font-size: 19px">&#x2B50;</span>
+
+              <p style="margin: 4px 4px 0px">24 Aug 2024</p>
+            </div>
+            <p class="review_text">
+              "VOILA Studio brought our products to life! The professional-grade
+              photos they delivered have greatly enhanced our ecommerce store,
+              helping our customers see the true quality of our home decor
+              pieces. Their team is easy to work with and really understands the
+              needs of an online business."
+            </p>
+            <h4 class="review_username">Kamal Advani</h4>
+          </div>
+          <div class="review-box">
+            <div style="display: flex; align-items: center">
+              <span style="font-size: 19px">&#x2B50;</span>
+              <span style="font-size: 19px">&#x2B50;</span>
+              <span style="font-size: 19px">&#x2B50;</span>
+              <span style="font-size: 19px">&#x2B50;</span>
+              <span style="font-size: 19px">&#x2B50;</span>
+              <p style="margin: 4px 4px 0px">25 Aug 2024</p>
+            </div>
+            <p class="review_text">
+              "We were looking for a photography partner who could bring out the
+              essence of our natural skincare products, and VOILA Studio nailed
+              it. The attention to detail, from the textures to the packaging,
+              was spot on. Their professionalism and quick turnaround are truly
+              commendable!"
+            </p>
+            <h4 class="review_username">Mahinder Sethi</h4>
+          </div>
+          <div class="review-box">
+            <div style="display: flex; align-items: center">
+              <span style="font-size: 19px">&#x2B50;</span>
+              <span style="font-size: 19px">&#x2B50;</span>
+              <span style="font-size: 19px">&#x2B50;</span>
+              <span style="font-size: 19px">&#x2B50;</span>
+              <span style="font-size: 19px">&#x2B50;</span>
+              <p style="margin: 4px 4px 0px">26 Aug 2024</p>
+            </div>
+            <p class="review_text">
+              "I can’t express how satisfied I am with VOILA Studio’s
+              photography services. They managed to highlight the unique
+              craftsmanship of our handmade products, and now, customers can
+              appreciate the beauty of our items even from a screen. This has
+              really boosted our ecommerce business."
+            </p>
+            <h4 class="review_username">Jasmeen Kalkani</h4>
+          </div>
+          <div class="review-box">
+            <div style="display: flex; align-items: center">
+              <span style="font-size: 19px">&#x2B50;</span>
+              <span style="font-size: 19px">&#x2B50;</span>
+              <span style="font-size: 19px">&#x2B50;</span>
+              <span style="font-size: 19px">&#x2B50;</span>
+              <span style="font-size: 19px">&#x2B50;</span>
+              <p style="margin: 4px 4px 0px">23 Aug 2024</p>
+            </div>
+            <p class="review_text">
+              "I've worked with a few photographers in the past, but
+              VOILAStudio's service stands out. They perfectly captured the
+              intricate details of our jewelry, making our products look
+              stunning online. The turnaround was quick, and the results were
+              flawless!"
+            </p>
+            <h4 class="review_username">Ritesh Jain</h4>
+          </div>
+          <div class="review-box">
+            <div style="display: flex; align-items: center">
+              <span style="font-size: 19px">&#x2B50;</span>
+              <span style="font-size: 19px">&#x2B50;</span>
+              <span style="font-size: 19px">&#x2B50;</span>
+              <span style="font-size: 19px">&#x2B50;</span>
+              <span style="font-size: 19px">&#x2B50;</span>
+              <p style="margin: 4px 4px 0px">23 Aug 2024</p>
+            </div>
+            <p class="review_text">
+              "I've worked with a few photographers in the past, but
+              VOILAStudio's service stands out. They perfectly captured the
+              intricate details of our jewelry, making our products look
+              stunning online. The turnaround was quick, and the results were
+              flawless!"
+            </p>
+            <h4 class="review_username">Ritesh Jain</h4>
+          </div>
         </div>
-        <div class="dots">
-            <span class="dot active" data-index="0"></span>
-            <span class="dot" data-index="1"></span>
-            <!-- <span class="dot" data-index="2"></span>
+        <button id="nextBtn" class="nav-btn">&gt;</button>
+      </div>
+      <div class="dots">
+        <span class="dot active" data-index="0"></span>
+        <span class="dot" data-index="1"></span>
+        <!-- <span class="dot" data-index="2"></span>
             <span class="dot" data-index="3"></span> -->
-        </div>
+      </div>
     </div>
-    
-    
+
     <script>
-    const reviewContainer = document.querySelector('.review-container');
-const reviews = document.querySelectorAll('.review-box');
-const dots = document.querySelectorAll('.dot');
-const reviewWidth = reviews[0].clientWidth + 20; 
-let currentPosition = 0;
-let currentIndex = 0;
+      const reviewContainer = document.querySelector(".review-container");
+      const reviews = document.querySelectorAll(".review-box");
+      const dots = document.querySelectorAll(".dot");
+      const reviewWidth = reviews[0].clientWidth + 20;
+      let currentPosition = 0;
+      let currentIndex = 0;
 
-function updatePosition() {
-    reviewContainer.style.transform = `translateX(${currentPosition}px)`;
-    dots.forEach(dot => dot.classList.remove('active'));
-    dots[currentIndex].classList.add('active');
-}
+      function updatePosition() {
+        reviewContainer.style.transform = `translateX(${currentPosition}px)`;
+        dots.forEach((dot) => dot.classList.remove("active"));
+        dots[currentIndex].classList.add("active");
+      }
 
-document.getElementById('nextBtn').addEventListener('click', () => {
-    if (currentPosition > -(reviewWidth * (reviews.length - 3))) {
-        currentPosition -= reviewWidth;
-        currentIndex = (currentIndex + 1) % dots.length;
-    } else {
-        currentPosition = 0;
-        currentIndex = 0;
-    }
-    updatePosition();
-});
-
-document.getElementById('prevBtn').addEventListener('click', () => {
-    if (currentPosition < 0) {
-        currentPosition += reviewWidth;
-        currentIndex = (currentIndex - 1 + dots.length) % dots.length;
-    } else {
-        currentPosition = -(reviewWidth * (reviews.length - 3)); 
-        currentIndex = dots.length - 1;
-    }
-    updatePosition();
-});
-
-dots.forEach(dot => {
-    dot.addEventListener('click', (e) => {
-        currentIndex = parseInt(e.target.dataset.index);
-        currentPosition = -(reviewWidth * currentIndex * 3);
+      document.getElementById("nextBtn").addEventListener("click", () => {
+        if (currentPosition > -(reviewWidth * (reviews.length - 3))) {
+          currentPosition -= reviewWidth;
+          currentIndex = (currentIndex + 1) % dots.length;
+        } else {
+          currentPosition = 0;
+          currentIndex = 0;
+        }
         updatePosition();
-    });
-});
+      });
 
+      document.getElementById("prevBtn").addEventListener("click", () => {
+        if (currentPosition < 0) {
+          currentPosition += reviewWidth;
+          currentIndex = (currentIndex - 1 + dots.length) % dots.length;
+        } else {
+          currentPosition = -(reviewWidth * (reviews.length - 3));
+          currentIndex = dots.length - 1;
+        }
+        updatePosition();
+      });
+
+      dots.forEach((dot) => {
+        dot.addEventListener("click", (e) => {
+          currentIndex = parseInt(e.target.dataset.index);
+          currentPosition = -(reviewWidth * currentIndex * 3);
+          updatePosition();
+        });
+      });
     </script>
-</body>
+  </body>
 </html>
