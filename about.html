@@ -1,52 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+        }
+
         .view_flex {
-          width: 100%;
-          display: grid;
-          grid-template-columns: repeat(6, 1fr);
+            width: 96%;
+            padding: 12px;
+            display: grid;
+            grid-template-columns: 1fr .6fr .8fr 1fr; 
+            align-items: center;
+            gap: 12px; 
+        }
+
+        .sec_branch_heading {
+            font-weight: 400;
+            font-size: 25px;
+            margin: 0;
+        }
+
+        .sec_branch_pera {
+            font-size: 16px;
+            font-weight: 400;
+            margin: 5px 0;
+        }
+
+        .view_img img {
+            width: 100%;
+            border-radius: 4%;
+        }
+        @media (max-width: 600px) {
+            .view_flex {
+               display: none;
+            }
         }
     </style>
 </head>
+
 <body>
     <div>
         <div class="view_flex">
             <div class="view_img">
-           <div>
-            <p>Branch Office</p>
-            <p>Mantri Commercio Tower-A, 5th floor , Marathahalli - Sarjapur Outer Ring Rd, Kariyammana Agrahara, Bellandur, Bengaluru, Karnataka - 560103 </p>
-           </div>
-              
+                <div>
+                    <p class="sec_branch_heading">Branch Office</p>
+                    <p class="sec_branch_pera">Mantri Commercio Tower-A, 5th floor , Marathahalli - Sarjapur Outer Ring Rd, Kariyammana
+                        Agrahara, Bellandur, Bengaluru, Karnataka - 560103 </p>
+                </div>
             </div>
             <div class="view_img">
-              <img
-                style="width: 100%; border-radius: 4%"
-                src="https://voilastudio.in/voilastudio_myntra/images/model_images/international_model/Bernado%20(1).webp"
-                alt=""
-              />
-              
+                <img src="https://voilastudio.in/voilastudio_myntra/images/model_images/international_model/Bernado%20(1).webp" alt="" />
             </div>
             <div class="view_img">
-              <img
-                style="width: 100%; border-radius: 4%"
-                src="https://voilastudio.in/voilastudio_myntra/images/model_images/international_model/Bernado%20(1).webp"
-                alt=""
-              />
-              
+                <img src="https://voilastudio.in/voilastudio_myntra/images/model_images/international_model/Bernado%20(1).webp" alt="" />
             </div>
             <div class="view_img">
-                 <img
-                   style="width: 100%; border-radius: 4%"
-                   src="https://voilastudio.in/voilastudio_myntra/images/model_images/international_model/Bernado%20(1).webp"
-                   alt=""
-                 />
-                 
-               </div>
-          </div>
+                <img src="https://voilastudio.in/voilastudio_myntra/images/model_images/international_model/Bernado%20(1).webp" alt="" />
+            </div>
+        </div>
     </div>
 </body>
+
 </html>
