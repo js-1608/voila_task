@@ -65,7 +65,7 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    z-index: 100;
+    z-index:100
 }
 
 #prevBtn {
@@ -78,6 +78,26 @@
 
 .nav-btn:hover {
     background-color: #0056b3;
+}
+
+.dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.dot {
+    height: 15px;
+    width: 15px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.dot.active {
+    background-color: #007BFF;
 }
 
     </style>
@@ -115,23 +135,36 @@
             </div>
             <button id="nextBtn" class="nav-btn">&gt;</button>
         </div>
+        <div class="dots">
+            <span class="dot active" data-index="0"></span>
+            <span class="dot" data-index="1"></span>
+            <!-- <span class="dot" data-index="2"></span>
+            <span class="dot" data-index="3"></span> -->
+        </div>
     </div>
     
+    
     <script>
-     const reviewContainer = document.querySelector('.review-container');
+    const reviewContainer = document.querySelector('.review-container');
 const reviews = document.querySelectorAll('.review-box');
-const reviewWidth = reviews[0].clientWidth + 20; // Review width + margin
+const dots = document.querySelectorAll('.dot');
+const reviewWidth = reviews[0].clientWidth + 20; 
 let currentPosition = 0;
+let currentIndex = 0;
 
 function updatePosition() {
     reviewContainer.style.transform = `translateX(${currentPosition}px)`;
+    dots.forEach(dot => dot.classList.remove('active'));
+    dots[currentIndex].classList.add('active');
 }
 
 document.getElementById('nextBtn').addEventListener('click', () => {
     if (currentPosition > -(reviewWidth * (reviews.length - 3))) {
         currentPosition -= reviewWidth;
+        currentIndex = (currentIndex + 1) % dots.length;
     } else {
-        currentPosition = 0; // Loop back to the start
+        currentPosition = 0;
+        currentIndex = 0;
     }
     updatePosition();
 });
@@ -139,10 +172,20 @@ document.getElementById('nextBtn').addEventListener('click', () => {
 document.getElementById('prevBtn').addEventListener('click', () => {
     if (currentPosition < 0) {
         currentPosition += reviewWidth;
+        currentIndex = (currentIndex - 1 + dots.length) % dots.length;
     } else {
-        currentPosition = -(reviewWidth * (reviews.length - 3)); // Loop to the end
+        currentPosition = -(reviewWidth * (reviews.length - 3)); 
+        currentIndex = dots.length - 1;
     }
     updatePosition();
+});
+
+dots.forEach(dot => {
+    dot.addEventListener('click', (e) => {
+        currentIndex = parseInt(e.target.dataset.index);
+        currentPosition = -(reviewWidth * currentIndex * 3);
+        updatePosition();
+    });
 });
 
     </script>
