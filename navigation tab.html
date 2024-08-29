@@ -1,106 +1,308 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vertical Tab Navigation</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+      }
+
+      .sidebar {
+        height: 100%;
+        width: 110px;
+        position: fixed;
+        background-color: #f1f1f1;
+        padding-top: 1%;
+        border-right: 1px solid #ccc;
+      }
+
+      .sidebar button {
+        display: block;
+        background-color: inherit;
+        color: black;
+        padding: 15px 5px;
+        width: 100%;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        transition: background-color 0.3s, color 0.3s;
+      }
+
+      .sidebar button:hover {
+        background-color: #a173c427;
+      }
+
+      .sidebar button.active {
+        background-color: #8a51b5;
+        color: white;
+      }
+
+      .content {
+        margin-left: 110px;
+        padding: 5px;
+      }
+
+      .city {
+        display: none;
+      }
+
+      .view-categories {
+        font-size: 15px;
+        font-weight: 600;
+        display: none;
+      }
+
+      .view_heading {
+        font-size: 19px;
+        font-weight: 500;
+        margin-bottom: 6px;
+        margin-top: 0;
+        padding-left: 5px;
+      }
+
+      .tablink {
+        font-size: 10px;
+        font-weight: 500;
+        text-align: center;
+      }
+      .view_pera {
+        font-size: 13px;
+        font-weight: 400;
+        margin-top: 0px;
+        padding-left: 5px;
+      }
+      .view_flex {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+      }
+      .view_img {
+        padding: 5px 5px;
+        border: 1px solid white;
+        transition: all 0.3s linear;
+      }
+      .view_img:hover {
+        transform: scale(1.03);
+      }
+      .view_img_pera {
+        margin: 0;
+        text-align: center;
+        font-size: 14px;
+      }
+
+      @media (min-width: 1024px) {
+
+        .view_pera {
+        font-size: 16px;
+       
+      }
+      .view_heading {
+        font-size: 20px;
+      
+      }
+        .tablink {
+          padding-left: 20px !important;
+          font-size: 16px;
+          text-align: left;
+        }
+        .view_heading {
+        font-size: 25px;
+      }
+      .view_img {
+        padding: 10px 12px;
+        border: 1px solid white;
+        transition: all 0.3s linear;
+      }
+        .view_flex {
+          width: 100%;
+          display: grid;
+          grid-template-columns: repeat(6, 1fr);
         }
         .sidebar {
-            height: 100%;
-            width: 250px;
-            position: fixed;
-            background-color: #f1f1f1;
-            padding-top: 20px;
-            border-right: 1px solid #ccc;
+          width: 280px;
         }
-        .sidebar button {
-            display: block;
-            background-color: inherit;
-            color: black;
-            padding: 10px 15px;
-            width: 100%;
-            border: none;
-            outline: none;
-            text-align: left;
-            cursor: pointer;
-            transition: background-color 0.3s, color 0.3s;
+          .content {
+        margin-left: 280px;
+        padding: 20px;
+      }
+      .view-categories {
+        font-size: 30px;
+        font-weight: 600;
+        display: block;
+      }
+      .sidebar button {
+    
+        padding: 20px 10px;
+      
+      }
+      }
+      @media (min-width: 768px) {
+        .view_flex {
+          width: 100%;
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
         }
-        .sidebar button:hover {
-            background-color: #ddd;
-        }
-        .sidebar button.active {
-            background-color: #4CAF50;
-            color: white;
-        }
-        .content {
-            margin-left: 250px;
-            padding: 20px;
-        }
-        .city {
-            display: none;
-        }
+      }
     </style>
-</head>
-<body>
+  </head>
 
-<div class="sidebar">
-    <button class="tablink " onclick="openCity(event, 'a')">a</button>
-    <button class="tablink" onclick="openCity(event, 'b')">b</button>
-    <button class="tablink" onclick="openCity(event, 'c')">c</button>
-    <button class="tablink" onclick="openCity(event, 'd')">d</button>
+  <body>
 
-</div>
-
-<div class="content">
-    <div id="a" class="city ">
-        <h2>a</h2>
-        <p>London is the capital city of England.</p>
-        <p>It is the most populous city in the United Kingdom, with a metropolitan area of over 13 million inhabitants.</p>
+    <div class="sidebar">
+      <h2 class="view-categories" style="padding-left: 12px">Categories</h2>
+      <button class="tablink active" onclick="openCity(event, 'a')">
+        Top Wear
+      </button>
+      <button class="tablink" onclick="openCity(event, 'b')">
+        Bottom Wear
+      </button>
+      <button class="tablink" onclick="openCity(event, 'c')">
+        Innerwear & Sleepwear
+      </button>
+      <button class="tablink" onclick="openCity(event, 'd')">
+        Sports & Active Wear
+      </button>
     </div>
 
-    <div id="b" class="city">
-        <h2>b</h2>
+    <div class="content">
+      <div id="a" class="city" style="display: block">
+        <h2 class="view_heading">Top Wear</h2>
+        <p class="view_pera">Book Men e-Commerce Photoshoot</p>
+        <div class="view_flex">
+          <div class="view_img">
+           <a style="text-decoration: none; color: black;" href=""> <img
+              style="width: 100%; border-radius: 4%"
+              src="https://voilastudio.in/voilastudio_myntra/images/model_images/international_model/Bernado%20(1).webp"
+              alt=""
+            />
+            <p class="view_img_pera">Formal Shirts</p></a>
+          </div>
+          <div class="view_img">
+           <a style="text-decoration: none; color: black;" href=""> <img
+              style="width: 100%; border-radius: 4%"
+              src="https://voilastudio.in/voilastudio_myntra/images/model_images/international_model/Bernado%20(1).webp"
+              alt=""
+            />
+            <p class="view_img_pera">Formal Shirts</p></a>
+          </div>
+          <div class="view_img">
+           <a style="text-decoration: none; color: black;" href=""> <img
+              style="width: 100%; border-radius: 4%"
+              src="https://voilastudio.in/voilastudio_myntra/images/model_images/international_model/Bernado%20(1).webp"
+              alt=""
+            />
+            <p class="view_img_pera">Formal Shirts</p></a>
+          </div>
+          <div class="view_img">
+           <a style="text-decoration: none; color: black;" href=""> <img
+              style="width: 100%; border-radius: 4%"
+              src="https://voilastudio.in/voilastudio_myntra/images/model_images/international_model/Bernado%20(1).webp"
+              alt=""
+            />
+            <p class="view_img_pera">Formal Shirts</p></a>
+          </div>
+          <div class="view_img">
+           <a style="text-decoration: none; color: black;" href=""> <img
+              style="width: 100%; border-radius: 4%"
+              src="https://voilastudio.in/voilastudio_myntra/images/model_images/international_model/Bernado%20(1).webp"
+              alt=""
+            />
+            <p class="view_img_pera">Formal Shirts</p></a>
+          </div>
+          <div class="view_img">
+           <a style="text-decoration: none; color: black;" href=""> <img
+              style="width: 100%; border-radius: 4%"
+              src="https://voilastudio.in/voilastudio_myntra/images/model_images/international_model/Bernado%20(1).webp"
+              alt=""
+            />
+            <p class="view_img_pera">Formal Shirts</p></a>
+          </div>
+          <div class="view_img">
+           <a style="text-decoration: none; color: black;" href=""> <img
+              style="width: 100%; border-radius: 4%"
+              src="https://voilastudio.in/voilastudio_myntra/images/model_images/international_model/Bernado%20(1).webp"
+              alt=""
+            />
+            <p class="view_img_pera">Formal Shirts</p></a>
+          </div>
+          <div class="view_img">
+           <a style="text-decoration: none; color: black;" href=""> <img
+              style="width: 100%; border-radius: 4%"
+              src="https://voilastudio.in/voilastudio_myntra/images/model_images/international_model/Bernado%20(1).webp"
+              alt=""
+            />
+            <p class="view_img_pera">Formal Shirts</p></a>
+          </div>
+          <div class="view_img">
+           <a style="text-decoration: none; color: black;" href=""> <img
+              style="width: 100%; border-radius: 4%"
+              src="https://voilastudio.in/voilastudio_myntra/images/model_images/international_model/Bernado%20(1).webp"
+              alt=""
+            />
+            <p class="view_img_pera">Formal Shirts</p></a>
+          </div>
+          <div class="view_img">
+           <a style="text-decoration: none; color: black;" href=""> <img
+              style="width: 100%; border-radius: 4%"
+              src="https://voilastudio.in/voilastudio_myntra/images/model_images/international_model/Bernado%20(1).webp"
+              alt=""
+            />
+            <p class="view_img_pera">Formal Shirts</p></a>
+          </div>
+        </div>
+      </div>
+
+      <div id="b" class="city">
+        <h2 class="view_heading">Bottom Wear</h2>
         <p>Paris is the capital of France.</p>
-        <p>The Paris area is one of the largest population centers in Europe, with more than 12 million inhabitants.</p>
-    </div>
+        <p>
+          The Paris area is one of the largest population centers in Europe,
+          with more than 12 million inhabitants.
+        </p>
+      </div>
 
-    <div id="c" class="city">
-        <h2>c</h2>
+      <div id="c" class="city">
+        <h2 class="view_heading">Innerwear & Sleepwear</h2>
         <p>Tokyo is the capital of Japan.</p>
-        <p>It is the center of the Greater Tokyo Area, and the most populous metropolitan area in the world.</p>
-    </div>
+        <p>
+          It is the center of the Greater Tokyo Area, and the most populous
+          metropolitan area in the world.
+        </p>
+      </div>
 
-    <div id="d" class="city">
-        <h2>d</h2>
+      <div id="d" class="city">
+        <h2 class="view_heading">Sports & Active Wear</h2>
         <p>Tokyo is the capital of Japan.</p>
-        <p>It is the center of the Greater Tokyo Area, and the most populous metropolitan area in the world.</p>
+        <p>
+          It is the center of the Greater Tokyo Area, and the most populous
+          metropolitan area in the world.
+        </p>
+      </div>
     </div>
-</div>
 
-<script>
-function openCity(evt, cityName) {
-    var i, city, tablinks;
+    <script>
+      function openCity(evt, cityName) {
+        var i, city, tablinks;
 
-    // Hide all city content
-    city = document.getElementsByClassName("city");
-    for (i = 0; i < city.length; i++) {
-        city[i].style.display = "none";
-    }
+        // Hide all city content
+        city = document.getElementsByClassName("city");
+        for (i = 0; i < city.length; i++) {
+          city[i].style.display = "none";
+        }
 
-    // Remove active class from all buttons
-    tablinks = document.getElementsByClassName("tablink");
-    for (i = 0; i < tablinks.length; i++) {
-        tablinks[i].className = tablinks[i].className.replace(" active", "");
-    }
+        // Remove active class from all buttons
+        tablinks = document.getElementsByClassName("tablink");
+        for (i = 0; i < tablinks.length; i++) {
+          tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
 
-    // Show the current city and add active class to the clicked button
-    document.getElementById(cityName).style.display = "block";
-    evt.currentTarget.className += " active";
-}
-</script>
-
-</body>
+        // Show the current city and add active class to the clicked button
+        document.getElementById(cityName).style.display = "block";
+        evt.currentTarget.className += " active";
+      }
+    </script>
+  </body>
 </html>
