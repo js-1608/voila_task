@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Dropdown</title>
+    <style>
+        /* Hide the default select */
+.custom-dropdown select {
+    display: none;
+}
+
+/* Container styling */
+.custom-dropdown {
+    position: relative;
+    display: inline-block;
+    width: 120px;
+}
+
+/* Dropdown button styling */
+.custom-dropdown::before {
+    content: attr(data-selected-text);
+    display: block;
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 10px;
+    cursor: pointer;
+}
+
+/* Options container styling */
+.custom-dropdown ul {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: white;
+    border: 1px solid #ccc;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    max-height: 150px;
+    overflow-y: auto;
+    z-index: 1000;
+}
+
+/* Option item styling */
+.custom-dropdown ul li {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.custom-dropdown ul li:hover {
+    background-color: #f0f0f0; /* Light grey hover effect */
+}
+
+/* Color box styling */
+.custom-dropdown ul li .color-box {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+}
+.custom-dropdown ul::-webkit-scrollbar{
+  display: none !important; 
+ }
+    </style>
+</head>
+<body>
+    <div class="custom-dropdown hideScrollbar">
+        <select id="colorDropdown" >
+            <option value="red" data-color="#ff0000">Red</option>
+            <option value="blue" data-color="#0000ff">Blue</option>
+            <option value="green" data-color="#008000">Green</option>
+            <option value="yellow" data-color="#ffff00">Yellow</option>
+            <option value="purple" data-color="#800080">Purple</option>
+        </select>
+    </div>
+    <script>document.addEventListener("DOMContentLoaded", function () {
+        const select = document.getElementById("colorDropdown");
+        const dropdown = document.querySelector(".custom-dropdown");
+        const dropdownList = document.createElement("ul");
+    
+        // Populate custom dropdown with options
+        Array.from(select.options).forEach(option => {
+            const li = document.createElement("li");
+            const colorBox = document.createElement("span");
+            colorBox.className = "color-box";
+            colorBox.style.backgroundColor = option.getAttribute("data-color");
+            li.appendChild(colorBox);
+            li.appendChild(document.createTextNode(option.text));
+            li.addEventListener("click", () => {
+                select.value = option.value;
+                dropdown.setAttribute("data-selected-text", option.text);
+                dropdownList.style.display = "none";
+            });
+            dropdownList.appendChild(li);
+        });
+    
+        dropdown.appendChild(dropdownList);
+        dropdown.setAttribute("data-selected-text", select.options[select.selectedIndex].text);
+    
+        // Show/hide dropdown list
+        dropdown.addEventListener("click", function () {
+            dropdownList.style.display = dropdownList.style.display === "block" ? "none" : "block";
+        });
+    
+        // Hide dropdown when clicking outside
+        document.addEventListener("click", function (e) {
+            if (!dropdown.contains(e.target)) {
+                dropdownList.style.display = "none";
+            }
+        });
+    });
+    </script>
+</body>
+</html>
