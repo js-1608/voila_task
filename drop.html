@@ -5,115 +5,112 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Color Dropdown</title>
     <style>
-        /* Hide the default select */
-.custom-dropdown select {
-    display: none;
-}
+        /* Container styling */
+        .custom-dropdown {
+            position: relative;
+            display: inline-block;
+            width: 120px;
+        }
 
-/* Container styling */
-.custom-dropdown {
-    position: relative;
-    display: inline-block;
-    width: 120px;
-}
+        /* Dropdown button styling */
+        .dropdown-selected {
+            background-color: white;
+            border: 1px solid #ccc;
+            padding: 10px;
+            cursor: pointer;
+            user-select: none;
+        }
 
-/* Dropdown button styling */
-.custom-dropdown::before {
-    content: attr(data-selected-text);
-    display: block;
-    background-color: white;
-    border: 1px solid #ccc;
-    padding: 10px;
-    cursor: pointer;
-}
+        /* Options container styling */
+        .dropdown-options {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background-color: white;
+            border: 1px solid #ccc;
+            padding: 0;
+            margin: 0;
+            list-style: none;
+            max-height: 150px;
+            overflow-y: auto;
+            z-index: 1000;
+        }
 
-/* Options container styling */
-.custom-dropdown ul {
-    display: none;
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    background-color: white;
-    border: 1px solid #ccc;
-    padding: 0;
-    margin: 0;
-    list-style: none;
-    max-height: 150px;
-    overflow-y: auto;
-    z-index: 1000;
-}
+        /* Option item styling */
+        .dropdown-option {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            cursor: pointer;
+        }
 
-/* Option item styling */
-.custom-dropdown ul li {
-    display: flex;
-    align-items: center;
-    padding: 10px;
-    cursor: pointer;
-}
+        .dropdown-option:hover {
+            background-color: #f0f0f0; /* Light grey hover effect */
+        }
 
-.custom-dropdown ul li:hover {
-    background-color: #f0f0f0; /* Light grey hover effect */
-}
+        /* Color box styling */
+        .color-box {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+            border: 1px solid #ccc;
+        }
 
-/* Color box styling */
-.custom-dropdown ul li .color-box {
-    width: 20px;
-    height: 20px;
-    margin-right: 10px;
-    border: 1px solid #ccc;
-}
-.custom-dropdown ul::-webkit-scrollbar{
-  display: none !important; 
- }
+        .dropdown-options::-webkit-scrollbar {
+            display: none !important;
+        }
     </style>
 </head>
 <body>
-    <div class="custom-dropdown hideScrollbar">
-        <select id="colorDropdown" >
-            <option value="red" data-color="#ff0000">Red</option>
-            <option value="blue" data-color="#0000ff">Blue</option>
-            <option value="green" data-color="#008000">Green</option>
-            <option value="yellow" data-color="#ffff00">Yellow</option>
-            <option value="purple" data-color="#800080">Purple</option>
-        </select>
+    <div class="custom-dropdown">
+        <div class="dropdown-selected" data-selected-text="Red">Red <span></span></div>
+        <ul class="dropdown-options">
+            <li class="dropdown-option" data-value="red" data-color="#ff0000">
+                <span class="color-box" style="background-color: #ff0000;"></span>Red
+            </li>
+            <li class="dropdown-option" data-value="blue" data-color="#0000ff">
+                <span class="color-box" style="background-color: #0000ff;"></span>Blue
+            </li>
+            <li class="dropdown-option" data-value="green" data-color="#008000">
+                <span class="color-box" style="background-color: #008000;"></span>Green
+            </li>
+            <li class="dropdown-option" data-value="yellow" data-color="#ffff00">
+                <span class="color-box" style="background-color: #ffff00;"></span>Yellow
+            </li>
+            <li class="dropdown-option" data-value="purple" data-color="#800080">
+                <span class="color-box" style="background-color: #800080;"></span>Purple
+            </li>
+        </ul>
     </div>
-    <script>document.addEventListener("DOMContentLoaded", function () {
-        const select = document.getElementById("colorDropdown");
-        const dropdown = document.querySelector(".custom-dropdown");
-        const dropdownList = document.createElement("ul");
-    
-        // Populate custom dropdown with options
-        Array.from(select.options).forEach(option => {
-            const li = document.createElement("li");
-            const colorBox = document.createElement("span");
-            colorBox.className = "color-box";
-            colorBox.style.backgroundColor = option.getAttribute("data-color");
-            li.appendChild(colorBox);
-            li.appendChild(document.createTextNode(option.text));
-            li.addEventListener("click", () => {
-                select.value = option.value;
-                dropdown.setAttribute("data-selected-text", option.text);
-                dropdownList.style.display = "none";
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const dropdownSelected = document.querySelector(".dropdown-selected");
+            const dropdownOptions = document.querySelector(".dropdown-options");
+
+            // Toggle dropdown options visibility
+            dropdownSelected.addEventListener("click", function () {
+                dropdownOptions.style.display = dropdownOptions.style.display === "block" ? "none" : "block";
             });
-            dropdownList.appendChild(li);
+
+            // Set selected option and update dropdown text
+            document.querySelectorAll(".dropdown-option").forEach(option => {
+                option.addEventListener("click", function () {
+                    dropdownSelected.textContent = this.textContent;
+                    dropdownSelected.setAttribute("data-selected-text", this.textContent);
+                    dropdownOptions.style.display = "none";
+                });
+            });
+
+            // Hide dropdown when clicking outside
+            document.addEventListener("click", function (e) {
+                if (!dropdownSelected.contains(e.target) && !dropdownOptions.contains(e.target)) {
+                    dropdownOptions.style.display = "none";
+                }
+            });
         });
-    
-        dropdown.appendChild(dropdownList);
-        dropdown.setAttribute("data-selected-text", select.options[select.selectedIndex].text);
-    
-        // Show/hide dropdown list
-        dropdown.addEventListener("click", function () {
-            dropdownList.style.display = dropdownList.style.display === "block" ? "none" : "block";
-        });
-    
-        // Hide dropdown when clicking outside
-        document.addEventListener("click", function (e) {
-            if (!dropdown.contains(e.target)) {
-                dropdownList.style.display = "none";
-            }
-        });
-    });
     </script>
 </body>
 </html>
