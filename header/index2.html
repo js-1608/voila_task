@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .big_box {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+      }
+      .box1 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: row;
+      }
+      .box_pera {
+        font-size: 20px;
+        line-height: 120%;
+        font-weight: 700;
+        padding-left: 10px;
+      }
+      @media (max-width: 600px) {
+        .box1 {
+          display: flex;
+          align-items: center;
+          flex-direction: column;
+          justify-content: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div style="max-width: 1200px; margin: auto">
+      <div style="display: flex" class="big_box">
+        <div class="box1">
+          <div>
+            <img
+              width="80"
+              src="./assets/images/production 1.png"
+              alt="production"
+            />
+          </div>
+          <p class="box_pera">
+            Premium <br />
+            Photoshoot <br />
+            Quality
+          </p>
+        </div>
+        <div class="box1">
+          <div>
+            <img
+              width="80"
+              src="./assets/images/verified 1.png"
+              alt="production"
+            />
+          </div>
+          <p class="box_pera">
+            On-Time<br />Shoot <br />
+            Delivery
+          </p>
+        </div>
+        <div class="box1">
+          <div>
+            <img
+              width="100"
+              src="./assets/images/solution 1.png"
+              alt="production"
+            />
+          </div>
+          <p class="box_pera">
+            Solutions for All
+            <br />Major Ecommerce <br />Platform
+          </p>
+        </div>
+        <div class="box1">
+          <div>
+            <img
+              width="100"
+              src="./assets/images/solution 1.png"
+              alt="production"
+            />
+          </div>
+          <p class="box_pera">
+        Comprehesive
+            <br/>Visual<br />Solutions
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
