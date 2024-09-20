@@ -140,7 +140,6 @@ height: 60px;
 .sub-box {
   display: none;
   margin-top: 10px;
-
   padding: 10px;
   width: 600px;
   height: 300px;
@@ -163,8 +162,8 @@ height: 60px;
 }
 
 .color_change{
- /* -webkit-text-stroke-width: .2px; */
- color: blueviolet;
+  -webkit-text-stroke-width: .5px;
+
 }
 
 /*  hover line */
@@ -202,5 +201,8 @@ height: 60px;
   /* Active state color */
   .model-box p.active {
     color: blueviolet; /* Change to the color you want */
+  }
+  .model-box p.active2 {
+    color: rgb(5, 172, 47); /* Change to the color you want */
   }
   
