@@ -195,14 +195,12 @@ height: 60px;
   
   /* Change color when hovering */
   .model-box p:hover {
-    color: blueviolet;
+    -webkit-text-stroke-width: .5px;
   }
   
   /* Active state color */
   .model-box p.active {
-    color: blueviolet; /* Change to the color you want */
+    -webkit-text-stroke-width: .5px;/* Change to the color you want */
   }
-  .model-box p.active2 {
-    color: rgb(5, 172, 47); /* Change to the color you want */
-  }
+
   
