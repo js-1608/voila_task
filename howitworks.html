@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How It Works</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+}
+
+.how-it-works {
+    padding: 50px;
+    text-align: center;
+}
+
+.how-it-works h2 {
+    font-size: 36px;
+    margin-bottom: 50px;
+    color: #333;
+}
+
+.steps-container {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.step {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    position: relative;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 30%;
+    text-align: center;
+}
+
+.step-number {
+    font-size: 100px;
+    color: rgba(0, 0, 0, 0.05);
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-weight: bold;
+    z-index: 0;
+}
+
+.step-icon {
+    width: 50px;
+    height: 50px;
+    z-index: 1;
+    margin-bottom: 20px;
+}
+
+.step h3 {
+    font-size: 20px;
+    color: #007bff;
+    z-index: 1;
+    margin-bottom: 10px;
+    position: relative;
+}
+
+.step p {
+    font-size: 16px;
+    color: #555;
+    z-index: 1;
+    position: relative;
+}
+
+@media (max-width: 768px) {
+    .steps-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .step {
+        width: 80%;
+        margin-bottom: 30px;
+    }
+}
+
+    </style>
+</head>
+<body>
+
+    <section class="how-it-works">
+        <h2>How It Works</h2>
+        <div class="steps-container">
+            <div class="step">
+                <span class="step-number">1</span>
+                <img src="./New folder/model.png" alt="Choose Model" class="step-icon">
+                <h3>Choose Model</h3>
+                <p>Select the model that suits your needs.</p>
+            </div>
+            <div class="step">
+                <span class="step-number">2</span>
+                <img src="./New folder/categories.png" alt="Choose Category" class="step-icon">
+                <h3>Choose Category</h3>
+                <p>Pick a category from the available options.</p>
+            </div>
+            <div class="step">
+                <span class="step-number">3</span>
+                <img src="./New folder/cost.png" alt="Make Payment" class="step-icon">
+                <h3>Make Payment</h3>
+                <p>Proceed with payment to complete your order.</p>
+            </div>
+        </div>
+    </section>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
