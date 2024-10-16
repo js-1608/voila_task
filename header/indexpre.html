@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>   
+    <style>
+
+        .premium-model-box {
+            display: none;
+            position: absolute;
+            top: 43px;
+            background-color: white;
+            color: black;
+            padding: 10px;
+            width: 150px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .premium-sub-box {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            width: 60px;
+            height: 30px;
+            border:1px solid black
+        }
+
+        .premium-subbutton {
+            position: absolute;
+            top: 43px;
+            border-radius: 5px;
+            left: 154px;
+            background-color: #ffffff;
+        }
+
+        /* Show and hide states */
+        .premium-show {
+            display: block;
+        }
+
+        .premium-opacity_0 {
+            opacity: 0;
+        }
+
+        .premium-opacity_1 {
+            opacity: 1;
+        }
+
+        .premium-color_change {
+            -webkit-text-stroke-width: 0.5px;
+        }
+
+        /* Hover effect for underlining */
+        .premium-nav_hover_line {
+            position: relative;
+        }
+
+        .premium-nav_hover_line::after {
+            content: "";
+            height: 2px;
+            width: 0%;
+            position: absolute;
+            bottom: -3px;
+            right: 0;
+            border-radius: 5px;
+            background-color: black;
+            transition: all 0.3s linear;
+        }
+
+        .premium-nav_hover_line:hover::after {
+            width: 100%;
+            left: 0;
+        }
+
+        /* Smooth transition for boxes */
+        .premium-model-box, .premium-sub-box {
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+        /* Default and hover state for buttons */
+        .premium-model-box p {
+            color: black;
+            transition: color 0.3s ease;
+        }
+
+        /* Active button state */
+        .premium-model-box p.active {
+            -webkit-text-stroke-width: 0.5px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div class="premium-submenu-container">
+            <a href="#" id="model-shoot"><span id="premium-colorchange" class="premium-nav_hover_line">Select Backdrop </span>
+            </a>
+            <div class="premium-model-box" id="premium-model-box">
+              <div class="">
+                <div class="">
+                  <p style="cursor: pointer" id="button1">SOLID COLOR BACKDROPS</p>
+                  <p style="margin: 10px 0px; cursor: pointer" id="button2">PAPER BACKDROPS</p>
+                  <p style="cursor: pointer" id="button3">PRINTED BACKDROPS</p>
+                </div>
+              </div>
+            </div>
+            <div class="premium-subbutton" style="overflow-y: scroll;">
+              <div class="premium-sub-box" id="premium-sub-box1"></div>
+              <div class="premium-sub-box" id="premium-sub-box2"></div>
+              <div class="premium-sub-box" id="premium-sub-box3"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+          const modelShoot = document.getElementById("model-shoot");
+          const colorchange = document.getElementById("premium-colorchange");
+          const modelBox = document.getElementById("premium-model-box");
+          const subBox1 = document.getElementById("premium-sub-box1");
+          const subBox2 = document.getElementById("premium-sub-box2");
+          const subBox3 = document.getElementById("premium-sub-box3");
+          const buttons = [
+            document.getElementById("button1"),
+            document.getElementById("button2"),
+            document.getElementById("button3"),
+          ];
+
+          let isHovered = false;
+
+          // Show the model-box when hovering over the model shoot link
+          modelShoot.addEventListener("mouseenter", () => {
+            modelBox.classList.add("premium-show");
+            colorchange.classList.add("premium-color_change");
+          });
+
+          // Keep the model-box open when hovering over it
+          modelBox.addEventListener("mouseenter", () => {
+            modelBox.classList.add("premium-show");
+            isHovered = true;  // Mark that the box is being hovered
+          });
+
+          // Keep the model-box visible when hovering over the sub-boxes
+          [subBox1, subBox2, subBox3].forEach((subBox) => {
+            subBox.addEventListener("mouseenter", () => {
+              subBox.classList.add("premium-show");
+              isHovered = true;  // Mark that the sub-box is being hovered
+            });
+
+            subBox.addEventListener("mouseleave", () => {
+              subBox.classList.remove("premium-show");
+              isHovered = false;  // Mark that the hover has left the sub-box
+              hideBoxes();
+            });
+          });
+
+          // Show the appropriate sub-box and change color of button when clicked
+          buttons.forEach((button, index) => {
+            button.addEventListener("mouseenter", () => {
+              [subBox1, subBox2, subBox3].forEach((box) => box.classList.remove("premium-show"));
+              const subBoxes = [subBox1, subBox2, subBox3];
+              subBoxes[index].classList.add("premium-show");
+
+              // Remove the 'active' class from all buttons and add to the hovered one
+              buttons.forEach((btn) => btn.classList.remove("active"));
+              button.classList.add("active");
+              
+              isHovered = true;
+            });
+          });
+
+          // Hide the model-box and sub-boxes if the mouse leaves both areas
+          modelBox.addEventListener("mouseleave", () => {
+            isHovered = false;  // Mark that the hover has left the model-box
+            hideBoxes();
+          });
+
+          // Function to hide both model-box and sub-boxes if no longer hovering
+          function hideBoxes() {
+            setTimeout(() => {
+              if (!isHovered) {
+                modelBox.classList.remove("premium-show");
+                colorchange.classList.remove("premium-color_change");
+                [subBox1, subBox2, subBox3].forEach((box) => box.classList.remove("premium-show"));
+                buttons.forEach((btn) => btn.classList.remove("active")); // Remove active class
+              }
+            }, 200);  // Small delay to allow for smoother transitions
+          }
+
+          // Hide boxes when clicking outside of them
+          document.addEventListener("click", (e) => {
+            if (!modelBox.contains(e.target) && !modelShoot.contains(e.target)) {
+              modelBox.classList.remove("premium-show");
+              colorchange.classList.remove("premium-color_change");
+              [subBox1, subBox2, subBox3].forEach((box) => box.classList.remove("premium-show"));
+              buttons.forEach((btn) => btn.classList.remove("active")); // Remove active class
+            }
+          });
+        });
+    </script>
+</body>
+</html>
