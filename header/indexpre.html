@@ -113,91 +113,80 @@
         </div>
     </div>
 
-    <script>
-        document.addEventListener("DOMContentLoaded", () => {
-          const modelShoot = document.getElementById("model-shoot");
-          const colorchange = document.getElementById("premium-colorchange");
-          const modelBox = document.getElementById("premium-model-box");
-          const subBox1 = document.getElementById("premium-sub-box1");
-          const subBox2 = document.getElementById("premium-sub-box2");
-          const subBox3 = document.getElementById("premium-sub-box3");
-          const buttons = [
-            document.getElementById("button1"),
-            document.getElementById("button2"),
-            document.getElementById("button3"),
-          ];
+</body>
+<script>document.addEventListener("DOMContentLoaded", () => {
+  const modelShoot = document.getElementById("model-shoot");
+  const colorchange = document.getElementById("premium-colorchange");
+  const modelBox = document.getElementById("premium-model-box");
+  const subBox1 = document.getElementById("premium-sub-box1");
+  const subBox2 = document.getElementById("premium-sub-box2");
+  const subBox3 = document.getElementById("premium-sub-box3");
+  const buttons = [
+    document.getElementById("button1"),
+    document.getElementById("button2"),
+    document.getElementById("button3"),
+  ];
 
-          let isHovered = false;
+  let isModelBoxHovered = false;
 
-          // Show the model-box when hovering over the model shoot link
-          modelShoot.addEventListener("mouseenter", () => {
-            modelBox.classList.add("premium-show");
-            colorchange.classList.add("premium-color_change");
-          });
+  // Show the model-box when hovering over the "Select Backdrop" link
+  modelShoot.addEventListener("mouseenter", () => {
+    modelBox.classList.add("premium-show");
+    colorchange.classList.add("premium-color_change");
+  });
 
-          // Keep the model-box open when hovering over it
-          modelBox.addEventListener("mouseenter", () => {
-            modelBox.classList.add("premium-show");
-            isHovered = true;  // Mark that the box is being hovered
-          });
+  // Track hover state over the model-box and sub-boxes
+  modelBox.addEventListener("mouseenter", () => {
+    isModelBoxHovered = true;
+  });
+  modelBox.addEventListener("mouseleave", () => {
+    isModelBoxHovered = false;
+    hideModelBox();
+  });
 
-          // Keep the model-box visible when hovering over the sub-boxes
-          [subBox1, subBox2, subBox3].forEach((subBox) => {
-            subBox.addEventListener("mouseenter", () => {
-              subBox.classList.add("premium-show");
-              isHovered = true;  // Mark that the sub-box is being hovered
-            });
+  // Hide model-box when mouse leaves the entire area
+  modelShoot.addEventListener("mouseleave", () => {
+    setTimeout(() => {
+      if (!isModelBoxHovered) {
+        modelBox.classList.remove("premium-show");
+        colorchange.classList.remove("premium-color_change");
+      }
+    }, 200); // Delay for smoother transition
+  });
 
-            subBox.addEventListener("mouseleave", () => {
-              subBox.classList.remove("premium-show");
-              isHovered = false;  // Mark that the hover has left the sub-box
-              hideBoxes();
-            });
-          });
+  // Show sub-box when hovering over buttons and highlight the active button
+  buttons.forEach((button, index) => {
+    button.addEventListener("mouseenter", () => {
+      [subBox1, subBox2, subBox3].forEach((box) => box.classList.remove("premium-show"));
+      const subBoxes = [subBox1, subBox2, subBox3];
+      subBoxes[index].classList.add("premium-show");
+      buttons.forEach((btn) => btn.classList.remove("active"));
+      button.classList.add("active");
+    });
+  });
 
-          // Show the appropriate sub-box and change color of button when clicked
-          buttons.forEach((button, index) => {
-            button.addEventListener("mouseenter", () => {
-              [subBox1, subBox2, subBox3].forEach((box) => box.classList.remove("premium-show"));
-              const subBoxes = [subBox1, subBox2, subBox3];
-              subBoxes[index].classList.add("premium-show");
+  // Hide the model-box if mouse leaves both the model and the sub-box areas
+  function hideModelBox() {
+    setTimeout(() => {
+      if (!isModelBoxHovered) {
+        modelBox.classList.remove("premium-show");
+        colorchange.classList.remove("premium-color_change");
+        [subBox1, subBox2, subBox3].forEach((box) => box.classList.remove("premium-show"));
+        buttons.forEach((btn) => btn.classList.remove("active"));
+      }
+    }, 200);
+  }
 
-              // Remove the 'active' class from all buttons and add to the hovered one
-              buttons.forEach((btn) => btn.classList.remove("active"));
-              button.classList.add("active");
-              
-              isHovered = true;
-            });
-          });
-
-          // Hide the model-box and sub-boxes if the mouse leaves both areas
-          modelBox.addEventListener("mouseleave", () => {
-            isHovered = false;  // Mark that the hover has left the model-box
-            hideBoxes();
-          });
-
-          // Function to hide both model-box and sub-boxes if no longer hovering
-          function hideBoxes() {
-            setTimeout(() => {
-              if (!isHovered) {
-                modelBox.classList.remove("premium-show");
-                colorchange.classList.remove("premium-color_change");
-                [subBox1, subBox2, subBox3].forEach((box) => box.classList.remove("premium-show"));
-                buttons.forEach((btn) => btn.classList.remove("active")); // Remove active class
-              }
-            }, 200);  // Small delay to allow for smoother transitions
-          }
-
-          // Hide boxes when clicking outside of them
-          document.addEventListener("click", (e) => {
-            if (!modelBox.contains(e.target) && !modelShoot.contains(e.target)) {
-              modelBox.classList.remove("premium-show");
-              colorchange.classList.remove("premium-color_change");
-              [subBox1, subBox2, subBox3].forEach((box) => box.classList.remove("premium-show"));
-              buttons.forEach((btn) => btn.classList.remove("active")); // Remove active class
-            }
-          });
-        });
-    </script>
+  // Hide the model-box and sub-boxes when clicking outside of them
+  document.addEventListener("click", (e) => {
+    if (!modelBox.contains(e.target) && !modelShoot.contains(e.target)) {
+      modelBox.classList.remove("premium-show");
+      colorchange.classList.remove("premium-color_change");
+      [subBox1, subBox2, subBox3].forEach((box) => box.classList.remove("premium-show"));
+      buttons.forEach((btn) => btn.classList.remove("active"));
+    }
+  });
+});
+</script>
 </body>
 </html>
